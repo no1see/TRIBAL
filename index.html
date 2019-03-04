@@ -74,9 +74,9 @@
               <p class="lead">
                 <a class="btn btn-lg header-content__btn" href="#advantages" role="button">Дізнатися більше</a>
               </p>
-            </div>
-            <div class="watermark-wrapper header-watermark">
-              <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
+              <div class="watermark-wrapper header-watermark">
+                <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
+              </div>
             </div>
           </div>
         <!-- <div class="header-content"> -->
@@ -268,53 +268,6 @@
               <button class="btn" onclick="filterSelection('people')"> People</button>
             </div>
           </div>
-          <!-- <div class="row">
-                           
-              <div class="column cars">
-                <div class="content">
-                  <img src="https://www.w3schools.com/w3images/cars1.jpg" alt="Car" style="width:100%">
-                  <h4>Retro</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </div>
-              <div class="column cars">
-                <div class="content">
-                <img src="https://www.w3schools.com/w3images/cars2.jpg" alt="Car" style="width:100%">
-                  <h4>Fast</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </div>
-              <div class="column cars">
-                <div class="content">
-                <img src="https://www.w3schools.com/w3images/cars3.jpg" alt="Car" style="width:100%">
-                  <h4>Classic</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </div>
-            
-              <div class="column people">
-                <div class="content">
-                  <img src="https://www.w3schools.com/w3images/people1.jpg" alt="Car" style="width:100%">
-                  <h4>Girl</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </div>
-              <div class="column people">
-                <div class="content">
-                <img src="https://www.w3schools.com/w3images/people2.jpg" alt="Car" style="width:100%">
-                  <h4>Man</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </div>
-              <div class="column people">
-                <div class="content">
-                <img src="https://www.w3schools.com/w3images/people3.jpg" alt="Car" style="width:100%">
-                  <h4>Woman</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </div> -->
-            <!-- END GRID -->
-            <!-- </div> -->
           <div id="mixedSlider" class="row">
             <div class="MS-content">
               <div class="item filter-item nature">
@@ -442,7 +395,7 @@
             this.className += " active";
           });
         }
-        </script>
+    </script>
     <!-- CATALOG ENDS -->
     <!-- TESTIMONAILS START -->
     <section id="testimonials">
@@ -450,31 +403,43 @@
         <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
       </div>
       <h2 class="text-center testimonials-header section-header grey">Відгуки</h2>
-      <div class="container">
+      <div class="container-fluid">
         
-        <div class="row testimonials-wrapper">
-          <div class="col-sm-4 col-xs-12 testimonials-item">
-            <img src="assets/images/testimonials/user-1.jpg" alt="" class="testimonials-thumbnails">
-            <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
-            <span class="testimonials-user__role">Покупець</span>
+        <div class="row testimonials-wrapper container mx-auto">
+          <div class="col-lg-4 col-xs-12 testimonials-item">
+            <div class="testimonials-item__header">
+              <img src="assets/images/testimonials/user-1.jpg" alt="" class="testimonials-thumbnails">
+              <div class="testimonials-user">
+                <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
+                <span class="testimonials-user__role">Покупець</span>
+              </div>
+            </div>
             <p class="testimonials-user__comment">
               Замовляла зажим з гравіруванням, дуже сподобався, шкіра товста та якісно прошита
               замовлення виконано дуже швидко, оформлення на висоті. Ви круті, правда!!! Дуже радує, що в нашій країні є такі
               майстри своєї справи.
             </p>
           </div>
-          <div class="col-sm-4 col-xs-12 testimonials-item">
-            <img src="assets/images/testimonials/user-2.jpg" alt="" class="testimonials-thumbnails">
-            <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
-            <span class="testimonials-user__role">Покупець</span>
+          <div class="col-lg-4 col-xs-12 testimonials-item">
+            <div class="testimonials-item__header">
+              <img src="assets/images/testimonials/user-2.jpg" alt="" class="testimonials-thumbnails">
+              <div class="testimonials-user">
+                <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
+                <span class="testimonials-user__role">Покупець</span>
+              </div>
+            </div>
             <p class="testimonials-user__comment">
               Замовляла портмане , все супер , отримала швидко , робота дуже гарна)
             </p>
           </div>
-          <div class="col-sm-4  col-xs-12 testimonials-item">
-            <img src="assets/images/testimonials/user-3.jpg" alt="" class="testimonials-thumbnails">
-            <h3 class="testimonials-user__name">Marianka Beswodizki</h3>
-            <span class="testimonials-user__role">Покупець</span>
+          <div class="col-lg-4 col-xs-12 testimonials-item">
+            <div class="testimonials-item__header">
+              <img src="assets/images/testimonials/user-3.jpg" alt="" class="testimonials-thumbnails">
+              <div class="testimonials-user">
+                <h3 class="testimonials-user__name">Marianka Beswodizki</h3>
+                <span class="testimonials-user__role">Покупець</span>
+              </div>
+            </div>
             <p class="testimonials-user__comment">
               Замовлення виконали швидко та якісно. Замовляла гаманець для друга на день народження, йому дуже сподобався. Думаю це не
               буде моїм останнім замовленням. Дякую за співпрацю. Рекомендую!
@@ -487,15 +452,23 @@
       <div class="contact-container contact-parallax">
         <div class="contact-wrapper">
           <h2 class="contact-header text-center section-header">Контакти</h2>
-          <div class="row">
-            <div class="col-lg-4 contact-item">
-              Наш офіс
-            </div>
-            <div class="col-lg-4 contact-item">
-              Написати нам
-            </div>
-            <div class="col-lg-4 contact-item">
-              Зателефонувати
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-4 contact-item">
+                Наш офіс
+                <br>
+                akisdjhaskd
+              </div>
+              <div class="col-lg-4 contact-item">
+                Написати нам
+                <br>
+                aldjasdl
+              </div>
+              <div class="col-lg-4 contact-item">
+                Зателефонувати
+                <br>
+                sdkjhd
+              </div>
             </div>
           </div>
           <div class="watermark-wrapper">

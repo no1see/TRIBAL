@@ -444,8 +444,29 @@ CATEGORY
 TESTIMONIALS
 ************/
 
-.testimonials-wrapper {
-  /* margin: 0 300px; */
+/* .testimonials-wrapper {
+  width: 1200px;
+} */
+
+.testimonials-item {
+  /* max-width: 25% !important; */
+}
+
+.testimonials-item__header {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.testimonials-user__name {
+  font-size: 1.1rem;
+  padding: 0 10px;
+}
+
+.testimonials-user__role {
+  font-size: 1rem;
+  font-style: italic;
+  color: #CBA77D;
 }
 
 
