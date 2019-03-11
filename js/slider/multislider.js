@@ -14,10 +14,9 @@
         // ==== CACHE DOM ====
         var $multislider = $(this);
         var $msContent = $multislider.find('.MS-content');
+        var $imgFirst = $msContent.find('.item:first');
         var $msRight = $multislider.find('button.MS-right');
         var $msLeft = $multislider.find('button.MS-left');
-        var $imgFirst = $msContent.find('.item:first');
-
         // === DETERMINE ACTION ====
         // string = method | object or nothing is to initialize
         if(typeof data === 'string'){

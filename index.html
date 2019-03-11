@@ -74,10 +74,10 @@
               <p class="lead">
                 <a class="btn btn-lg header-content__btn" href="#advantages" role="button">Дізнатися більше</a>
               </p>
-              <div class="watermark-wrapper header-watermark">
-                <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
-              </div>
             </div>
+                <div class="watermark-wrapper header-watermark">
+                  <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
+                </div>
           </div>
         <!-- <div class="header-content"> -->
           <!-- <h1 class="header-text">Подарунки <br>зі шкіри<br> <span>ручної роботи.</span></h1>
@@ -260,142 +260,101 @@
           </div>
         </div>
         <div class="category-wrapper">
-          <div class="category-filter">
-            <div id="myBtnContainer">
-              <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-              <button class="btn" onclick="filterSelection('nature')"> Nature</button>
-              <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-              <button class="btn" onclick="filterSelection('people')"> People</button>
+          <div class="category-filter row justify-content-center align-content-center">
+            <div class="category-filter-wrapper dropdown">
+              <button class="btn category-filter-button dropdown-toggle" type="button" id="dropdownManMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Для нього
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div id="manFilterContainer">
+                  <button class="btn active" onclick="filterMan('all')"> Show all</button>
+                  <button class="btn" onclick="filterMan('nature')"> Nature</button>
+                  <button class="btn" onclick="filterMan('cars')"> Cars</button>
+                  <button class="btn" onclick="filterMan('people')"> People</button>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter-wrapper dropdown">
+              <button class="btn dropdown-toggle category-filter-button" type="button" id="dropdownWomanMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Для неї
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div id="womanFilterContainer">
+                  <button class="btn active" onclick="filterWoman('all')"> Show all</button>
+                  <button class="btn" onclick="filterWoman('nature')"> Nature</button>
+                  <button class="btn" onclick="filterWoman('cars')"> Cars</button>
+                  <button class="btn" onclick="filterWoman('people')"> People</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div id="mixedSlider" class="row">
-            <div class="MS-content">
-              <div class="item filter-item nature">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Animals</h2>
-                  <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Mountains">
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
+          <div class="container-fluid">
+            <div id="mixedSlider" class="row">
+              <div class="MS-controls">
+                <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
               </div>
-              <div class="item filter-item nature">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Animals</h2>
-                  <img src="https://www.w3schools.com/w3images/lights.jpg" alt="lights">
+              <div class="MS-content">
+                <div class="item filter-item nature">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Animals</h2>
+                    <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Mountains">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
-              </div>
-              <div class="item filter-item nature">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Animals</h2>
-                  <img src="https://www.w3schools.com/w3images/nature.jpg" alt="nature">
+                <div class="item filter-item nature">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Animals</h2>
+                    <img src="https://www.w3schools.com/w3images/lights.jpg" alt="lights">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
-              </div>
-              <div class="item filter-item cars">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Arch</h2>
-                  <img src="https://www.w3schools.com/w3images/cars1.jpg" alt="Car">
+                <div class="item filter-item nature">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Animals</h2>
+                    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="nature">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
-              </div>
-              <div class="item filter-item cars">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Arch</h2>
-                  <img src="https://www.w3schools.com/w3images/cars2.jpg" alt="Car">
+                <div class="item filter-item cars">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Arch</h2>
+                    <img src="https://www.w3schools.com/w3images/cars1.jpg" alt="Car">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
-              </div>
-              <div class="item filter-item cars">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Arch</h2>
-                  <img src="https://www.w3schools.com/w3images/cars3.jpg" alt="Car">
+                <div class="item filter-item cars">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Arch</h2>
+                    <img src="https://www.w3schools.com/w3images/cars2.jpg" alt="Car">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
-              </div>
-              <div class="item filter-item people">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Nature</h2>
-                  <img src="https://www.w3schools.com/w3images/people1.jpg" alt="Car">
+                <div class="item filter-item cars">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Arch</h2>
+                    <img src="https://www.w3schools.com/w3images/cars3.jpg" alt="Car">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
-              </div>
-              <div class="item filter-item people">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">People</h2>
-                  <img src="https://www.w3schools.com/w3images/people2.jpg" alt="Car">
+                <div class="item filter-item people">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Nature</h2>
+                    <img src="https://www.w3schools.com/w3images/people1.jpg" alt="Car">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Замовити</a>
-              </div>
-              <div class="item filter-item people">
-                <div class="imgTitle">
-                  <h2 class="blogTitle">Tech</h2>
-                  <img src="https://www.w3schools.com/w3images/people3.jpg" alt="Car">
+                <div class="item filter-item people">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">People</h2>
+                    <img src="https://www.w3schools.com/w3images/people2.jpg" alt="Car">
+                  </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac tellus ex. Integer eu fringilla nisi. Donec id dapibus mauris, eget dignissim turpis ...</p>
-                <a href="#">Read More</a>
+                <div class="item filter-item people">
+                  <div class="imgTitle">
+                    <h2 class="blogTitle">Tech</h2>
+                    <img src="https://www.w3schools.com/w3images/people3.jpg" alt="Car">
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="MS-controls">
-              <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
-              <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script>
-        filterSelection("all")
-        function filterSelection(c) {
-          var x, i;
-          x = document.getElementsByClassName("item");
-          if (c == "all") c = "";
-          for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-          }
-        }
-        
-        function w3AddClass(element, name) {
-          var i, arr1, arr2;
-          arr1 = element.className.split(" ");
-          arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-          }
-        }
-        
-        function w3RemoveClass(element, name) {
-          var i, arr1, arr2;
-          arr1 = element.className.split(" ");
-          arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-              arr1.splice(arr1.indexOf(arr2[i]), 1);     
-            }
-          }
-          element.className = arr1.join(" ");
-        }
-        
-        
-        // Add active class to the current button (highlight it)
-        var btnContainer = document.getElementById("myBtnContainer");
-        var btns = btnContainer.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function(){
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-          });
-        }
-    </script>
     <!-- CATALOG ENDS -->
     <!-- TESTIMONAILS START -->
     <section id="testimonials">
@@ -406,44 +365,56 @@
       <div class="container-fluid">
         
         <div class="row testimonials-wrapper container mx-auto">
-          <div class="col-lg-4 col-xs-12 testimonials-item">
-            <div class="testimonials-item__header">
-              <img src="assets/images/testimonials/user-1.jpg" alt="" class="testimonials-thumbnails">
-              <div class="testimonials-user">
-                <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
-                <span class="testimonials-user__role">Покупець</span>
+          <div class="col-lg-4 col-sm-12 testimonials-item">
+            <div class="testimonials-item__wrapper d-flex">
+              <div class="testimonials-item__image">
+                <img src="assets/images/testimonials/user-1.jpg" alt="" class="testimonials-thumbnails">
+              </div>
+              <div class="testimonials-item__content">
+                <div class="testimonials-user">
+                  <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
+                  <span class="testimonials-user__role">Покупець</span>
+                </div>
+                <p class="testimonials-user__comment">
+                  Замовляла зажим з гравіруванням, дуже сподобався, шкіра товста та якісно прошита
+                  замовлення виконано дуже швидко, оформлення на висоті. Ви круті, правда!!! Дуже радує, що в нашій країні є такі
+                  майстри своєї справи.
+                </p>
               </div>
             </div>
-            <p class="testimonials-user__comment">
-              Замовляла зажим з гравіруванням, дуже сподобався, шкіра товста та якісно прошита
-              замовлення виконано дуже швидко, оформлення на висоті. Ви круті, правда!!! Дуже радує, що в нашій країні є такі
-              майстри своєї справи.
-            </p>
           </div>
           <div class="col-lg-4 col-xs-12 testimonials-item">
-            <div class="testimonials-item__header">
-              <img src="assets/images/testimonials/user-2.jpg" alt="" class="testimonials-thumbnails">
-              <div class="testimonials-user">
-                <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
-                <span class="testimonials-user__role">Покупець</span>
+            <div class="testimonials-item__wrapper d-flex">
+              <div class="testimonials-item__image">
+                <img src="assets/images/testimonials/user-2.jpg" alt="" class="testimonials-thumbnails">
+              </div>
+              <div class="testimonials-item__content">
+                <div class="testimonials-user">
+                  <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
+                  <span class="testimonials-user__role">Покупець</span>
+                </div>
+                <p class="testimonials-user__comment">
+                  Замовляла портмане , все супер , отримала швидко , робота дуже гарна)
+                </p>
               </div>
             </div>
-            <p class="testimonials-user__comment">
-              Замовляла портмане , все супер , отримала швидко , робота дуже гарна)
-            </p>
           </div>
-          <div class="col-lg-4 col-xs-12 testimonials-item">
-            <div class="testimonials-item__header">
-              <img src="assets/images/testimonials/user-3.jpg" alt="" class="testimonials-thumbnails">
-              <div class="testimonials-user">
-                <h3 class="testimonials-user__name">Marianka Beswodizki</h3>
-                <span class="testimonials-user__role">Покупець</span>
+          <div class="col-lg-4 col-sm-12 testimonials-item">
+            <div class="testimonials-item__wrapper d-flex">
+              <div class="testimonials-item__image">
+                <img src="assets/images/testimonials/user-3.jpg" alt="" class="testimonials-thumbnails">
+              </div>
+              <div class="testimonials-item__content">
+                <div class="testimonials-user">
+                  <h3 class="testimonials-user__name">Marianka Beswodizki</h3>
+                  <span class="testimonials-user__role">Покупець</span>
+                </div>
+                <p class="testimonials-user__comment">
+                  Замовлення виконали швидко та якісно. Замовляла гаманець для друга на день народження, йому дуже сподобався. Думаю це не
+                  буде моїм останнім замовленням. Дякую за співпрацю. Рекомендую!
+                </p>
               </div>
             </div>
-            <p class="testimonials-user__comment">
-              Замовлення виконали швидко та якісно. Замовляла гаманець для друга на день народження, йому дуже сподобався. Думаю це не
-              буде моїм останнім замовленням. Дякую за співпрацю. Рекомендую!
-            </p>
           </div>
         </div>
       </div>
@@ -452,22 +423,46 @@
       <div class="contact-container contact-parallax">
         <div class="contact-wrapper">
           <h2 class="contact-header text-center section-header">Контакти</h2>
-          <div class="container-fluid">
+          <div class="container">
             <div class="row">
-              <div class="col-lg-4 contact-item">
-                Наш офіс
-                <br>
-                akisdjhaskd
+              <div class="col-lg-4 col-sm-12 contact-item">
+                <div class="contact-item__wrapper row">
+                  <div class="contact-item__icon">
+                    <img src="assets/images/office-contact.svg" alt="Офіс">
+                  </div>
+                  <div class="contact-item__content">
+                    Наш офіс
+                    <div class="contact-item__info">
+                      <a href="https://goo.gl/maps/CiWRLt81gR62" target="_blank" rel="noopener nofollow">Гордоцька, 217</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-lg-4 contact-item">
-                Написати нам
-                <br>
-                aldjasdl
+              <div class="col-lg-4 col-sm-12 contact-item">
+                  <div class="contact-item__wrapper row">
+                    <div class="contact-item__icon">
+                      <img src="assets/images/messenger-contact.svg" alt="Месенджер">
+                    </div>
+                    <div class="contact-item__content">
+                      Написати нам
+                      <div class="contact-item__info">
+                          <a href="https://m.me/sergiy.laba" target="_blank" rel="noopener nofollow">Sergii Laba</a>
+                      </div>
+                    </div>
+                  </div>
               </div>
-              <div class="col-lg-4 contact-item">
-                Зателефонувати
-                <br>
-                sdkjhd
+              <div class="col-lg-4 col-sm-12 contact-item">
+                <div class="contact-item__wrapper row">
+                  <div class="contact-item__icon">
+                    <img src="assets/images/phone-contact.svg" alt="Телефон">
+                  </div>
+                  <div class="contact-item__content">
+                    Зв'язатись з нами
+                    <div class="contact-item__info">
+                      <a href="tel:+380 93 685 68 95">+380 93 685 68 95</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -479,21 +474,20 @@
     </section>
     <!-- TESTIMONAILS START -->
     <!-- FOOTER START -->
-    <footer>
-      <div class="container footer-container">
+    <footer >
+      <div class="container-fluid footer-container">
         <div class="row">
-          <div class="col-lg-12 ">
-            <p class="footer-text text-center">
+          <div class="col-12 py-3 footer-copyright">
+            <p class="footer-text text-center  text-center ">
               Copyright © 2019 Tribal
             </p>
           </div>
         </div>
       </div>
     </footer>
-    <button id="toTop"><i class="fa fa-2x fa-chevron-up"></i></button>
+    <button id="toTop"><img src="assets/images/back-to-top-arrow.svg" alt="back to top"></button>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -503,7 +497,7 @@
     <script src="/js/slider-scroll.js"></script>
     <script src="/js/scrollToTop.js"></script>
     <script src="js/slider/multislider.js"></script>
-
+    <script src="js/slider-filter.js"></script>
   <script>
     $('#mixedSlider').multislider({
 			duration: 750,
