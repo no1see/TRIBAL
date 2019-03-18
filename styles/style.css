@@ -1,9 +1,11 @@
 body, h1, h2, h3, p {
-  /* font-family: 'Comfortaa', cursive; */
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Lato', sans-serif;
 
 }
 
+/* 
+START OF GENERAL RULES
+*/
 .section-header {
   margin-top: 30px;
   color: #fff;
@@ -14,6 +16,24 @@ body, h1, h2, h3, p {
 .grey {
   color: #929495;
 }
+
+#categories {
+  height: calc(100vh - 65px) !important;
+}
+
+.category-container {
+  height: inherit;
+}
+
+#goods {
+  height: calc(85vh - 65px) !important;
+}
+
+
+
+/* 
+END OF GENERAL RULES
+*/
 
 /************** 
 NAVBAR
@@ -88,23 +108,39 @@ nav {
 HEADER
 **************/
 
-header {
-  /* background-image: linear-gradient(
-                      270deg, rgba(22, 25, 34, 0.85) 0%, 
-                      rgba(22, 25, 34, 0.5185) 49.72%, 
-                      rgba(22, 25, 34, 0.595) 100%, 
-                      rgba(22, 25, 34, 0.595) 100%, 
-                      rgba(22, 25, 34, 0.85) 100%
-                    ),
-                    url('/assets/images/background.jpg'); */
-  /* uncomment z-index here and #videoBackground */
-  z-index: -5;
+section#home {
+  /* background-image: linear-gradient(90deg, rgba(3, 3, 3, 0.95) 0%,
+  rgba(5, 5, 5, 0.884091) 14.36%,
+  rgba(16, 15, 14, 0.86) 40.33%,
+  rgba(38, 34, 30, 0.75) 100%);
+  
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
   height: calc(100vh - 65px);
   overflow: hidden;
-  /* position: relative; */
+  position: relative;
+  /* uncomment z-index here and #videoBackground */
+  /* z-index: -5; */
+}
+
+#home::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(270deg,
+  rgba(3, 3, 3, 0.95) 0%,
+  rgba(7, 7, 8, 0.922693) 28.18%,
+  rgba(11, 12, 16, 0.884089) 44.2%,
+  rgba(15, 16, 22, 0.854803) 64.09%,
+  rgba(20, 23, 31, 0.810354) 74.8%,
+  rgba(38, 34, 30, 0.7125) 100%);
+  transform: rotate(-180deg);
+  z-index: -1;
+  opacity: 0.7;
 }
 
 #video-background {
@@ -117,7 +153,7 @@ header {
   width: auto; 
   height: auto;
   z-index: -1;
-  /* transform: scale(1.4); */
+  transform: scale(1.35);
 }
 
 .jumbotron {
@@ -144,7 +180,7 @@ header {
 }
 
 .header-content {
-  margin-top: 50px;
+  margin: 50px;
   /* margin-left: 240px; */
 }
 
@@ -189,13 +225,16 @@ header {
 }
 
 .header-watermark {
-  /* margin-top: 150px; */
+  margin-top: 70px;
 }
 
 
 /************** 
 ADVANTAGES
 **************/
+section#advantages {
+  height: unset !important;
+}
 .advantages-wrapper {
   padding: 80px 0;
   width: 100%;
@@ -243,7 +282,7 @@ ADVANTAGES
 GOODS
 **************/
 
-#goods, #advantage, #about {
+#goods, #advantage, #about, #howto, #testimonials {
   padding-top: 65px;
   
 }
@@ -259,7 +298,7 @@ GOODS
                     ),
                     url('/assets/images/most-popular.jpg');
   background-size: cover; */
-  height: 600px;
+  height: inherit;
   overflow: hidden;
 }
 
@@ -776,3 +815,79 @@ footer {
     animation-duration: 1.5s
   }
 }
+
+/* Start Nav Styles */
+.scroll-spy {
+  position: fixed;
+  z-index: 999;
+  top: 40%;
+  right: 50px;
+  transform: translateY(-50%);
+}
+.scroll-spy .scroll-spy-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.scroll-spy .scroll-spy-menu li {
+  position: relative;
+  min-width: 200px;
+  text-align: right;
+  margin: 25px 0;
+}
+.scroll-spy .scroll-spy-menu li .dot {
+  display: block;
+  color: #CBA77D;
+  padding: 5px 0;
+}
+.scroll-spy .scroll-spy-menu li .dot::before,
+.scroll-spy .scroll-spy-menu li .dot::after {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 50%;  
+  top: 50%;  
+  transition: all .3s ease;
+}
+.scroll-spy .scroll-spy-menu li .dot::before {
+  width: 12px;
+  height: 12px;
+  right: 0;
+  border: 2px solid #CBA77D;
+  transform: translateY(-50%);
+}
+.scroll-spy .scroll-spy-menu li .dot::after {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #CBA77D;
+  right: -7px;
+  transform: translateY(-50%) scale(0);
+}
+.scroll-spy .scroll-spy-menu li .dot.active::before,
+.scroll-spy .scroll-spy-menu li:hover .dot::before {
+  background: #CBA77D;
+  border-color: #CBA77D;
+}
+
+/* .white-active .dot::before,
+.white-active:hover .dot::before {
+  background: #000 !important;
+  border-color: #000 !important;
+}
+
+.scroll-spy .scroll-spy-menu .white-active .dot::after,
+.white-active .dot::after {
+  border: 2px solid #000;
+}
+
+.white-active .dot {
+  display: block;
+  color: #000;
+  padding: 5px 0;
+} */
+
+.scroll-spy .scroll-spy-menu li .dot.active::after,
+.scroll-spy .scroll-spy-menu li:hover .dot::after {
+  transform: translateY(-50%) scale(1);  
+}
+/* End Nav Styles */

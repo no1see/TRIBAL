@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500,700" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900;subset=latin-ext" rel="stylesheet">  </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="65">
     <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-black">
       <div class="brand-wrapper">
@@ -60,41 +58,28 @@
       </div>
     </nav>
     <!-- HEADER START -->
-    <header id="home">
-      <!-- <div class="header-black-suqare"></div> -->
+    <section id="home">
       <div class="header-content__wrapper">
-        <!-- <div class="header-content"> -->
-          <div class="jumbotron jumbotron-fluid header-content">
-            <div class="container">
-              <h1 class="display-3 header-text">Подарунки <br>зі шкіри<br> <span>ручної роботи.</span></h1>
-              <p class="lead header-description ">
-                  Бренд TRIBAL гарантує якість, також ми запаковуємо в фірмову упаковку, 
-                  комбінуємо подарункові набори, наносимо іменне гравіювання.
-                </p>
-              <p class="lead">
-                <a class="btn btn-lg header-content__btn" href="#advantages" role="button">Дізнатися більше</a>
+        <div class="jumbotron jumbotron-fluid header-content">
+          <div class="container">
+            <h1 class="display-3 header-text">Подарунки <br>зі шкіри<br> <span>ручної роботи.</span></h1>
+            <p class="lead header-description ">
+                Бренд TRIBAL гарантує якість, також ми запаковуємо в фірмову упаковку, 
+                комбінуємо подарункові набори, наносимо іменне гравіювання.
               </p>
-            </div>
-                <div class="watermark-wrapper header-watermark">
-                  <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
-                </div>
+            <p class="lead">
+              <a class="btn btn-lg header-content__btn" href="#advantages" role="button">Дізнатися більше</a>
+            </p>
           </div>
-        <!-- <div class="header-content"> -->
-          <!-- <h1 class="header-text">Подарунки <br>зі шкіри<br> <span>ручної роботи.</span></h1>
-          <br>
-          <p class="header-description ">
-            Бренд TRIBAL гарантує якість, також ми запаковуємо в фірмову упаковку, 
-            комбінуємо подарункові набори, наносимо іменне гравіювання.
-          </p>
-          <br>
-          <button class="header-content__btn">Дізнатися більше</button> -->
-        <!-- </div> -->
-        
+        </div>
+        <div class="watermark-wrapper header-watermark">
+          <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
+        </div>
       </div>
       <video autoplay loop id="video-background" class="d-none d-xl-block d-lg-block" muted plays-inline>
         <source src="assets/images/tribal.mp4" type="video/mp4">
       </video>
-    </header>
+    </section>
     <!-- HEADER ENDS -->
     <!-- ADVANTAGE START -->
     <section class="advantages" id="advantages">
@@ -222,9 +207,9 @@
     <!-- POPULAR ENDS -->
     <!-- HOWTO START -->
     <section id="howto">
-      <div class="watermark-wrapper">
+      <!-- <div class="watermark-wrapper">
         <img class="watermark img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
-      </div>
+      </div> -->
       <h2 class="howto-header text-center section-header grey">Як оформити замовлення</h2>
       <div class="container">
         <div class="row howto-wrapper text-center">
@@ -353,14 +338,16 @@
             </div>
           </div>
         </div>
+        <div class="watermark-wrapper">
+            <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
+          </div>
       </div>
+      
     </section>
     <!-- CATALOG ENDS -->
     <!-- TESTIMONAILS START -->
     <section id="testimonials">
-      <div class="watermark-wrapper">
-        <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
-      </div>
+      
       <h2 class="text-center testimonials-header section-header grey">Відгуки</h2>
       <div class="container-fluid">
         
@@ -506,6 +493,47 @@
     $('#bs4-slide-carousel').carousel({
       interval: 3000
     });
+    /*global $, alert,console,window*/
+    $(function() {
+  
+    var link = $('#scroll-spy a.dot');
+    
+    // Move to specific section when click on menu link
+    link.on('click', function(e) {
+      var target = $($(this).attr('href'));
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 600);
+      $(this).addClass('active');
+      e.preventDefault();
+    });
+    
+    // Run the scrNav when scroll
+    $(window).on('scroll', function(){
+      scrNav();
+    });
+    
+    // scrNav function 
+    // Change active dot according to the active section in the window
+    function scrNav() {
+      var sTop = $(window).scrollTop();
+      $('section').each(function() {
+        var id = $(this).attr('id'),
+            offset = $(this).offset().top-65,
+            height = $(this).height();
+        if(sTop >= offset && sTop < offset + height) {
+          link.removeClass('active');
+          $('#scroll-spy').find('li').removeClass('white-active');
+          console.log(id);
+          $('#scroll-spy').find('[data-scroll="' + id + '"]').addClass('active');
+          if (id == 'advantages' || id == 'howto' || id == 'testimonials') {
+            $('#scroll-spy').find('li').addClass('white-active');
+          } 
+        }
+      });
+    }
+    scrNav();
+  });
   </script>
   </body>
 </html>
