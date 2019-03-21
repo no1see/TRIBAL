@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  var folder = "/assets/images/sell";
+  var folderNumber;
+  var folder = `/assets/images/sell/${folderNumber}`;
   let arr = [];
   $.ajax({
     url : folder,
