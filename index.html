@@ -12,8 +12,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900;subset=latin-ext" rel="stylesheet"> </head>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.8/css/bootstrap-select.css" />-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.8/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
 
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
     <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-black">
@@ -72,9 +76,27 @@
                     </div>
                 </div>
 
-                <!-- Modal body -->
+                <!-- Modal body  action="/send-email" method="post"-->
                 <div class="modal-body">
-                    <form class="send-form" action="http://localhost:3000/send-email" method="post">
+                    <form class="send-form" >
+                        <div class="row">
+                            <div class="form-group col-lg-12 mx-auto">
+                                <!--<select class="form-select">-->
+                                <!--</select>-->
+                                <select name="order" class="selectpicker form-select"></select>
+                                <!--<select title="Select your surfboard" class="selectpicker">-->
+                                    <!--<option>Select...</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0005/0005-1.jpeg">Сумка</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0006/0006-1.jpeg">Сумка</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0007/0007-1.jpeg">Сумка</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0020/0020-1.jpeg">Сумка</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0021/0021-1.jpeg">Сумка</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0024/0024-1.jpeg">Сумка</option>-->
+                                    <!--<option data-thumbnail="assets/images/sell/0027/0027-1.jpeg">Сумка</option>-->
+                                <!--</select>-->
+                                <label class="form-label">Виберіть товар</label>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="form-group col-lg-12 mx-auto">     
                                 <input class="form-input" type="text" name="name" required>
@@ -117,7 +139,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-12 mx-auto">
-                                <button type="submit" class="btn btn-success">Надіслати повідомлення</button>
+                                <button type="submit" class="form-submit btn btn-success">Надіслати повідомлення</button>
                             </div>
                         </div>
                     </form>
@@ -337,7 +359,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <div id="womanFilterContainer">
                                 <button class="btn active" onclick="filterWoman('woman')"> Показати всі</button>
-                                <button class="btn" onclick="filterWoman('w-portmone')"> Nature</button>
+                                <button class="btn" onclick="filterWoman('w-portmone')"> Портмоне </button>
                                 <button class="btn" onclick="filterWoman('w-bag')"> Сумка</button>
                                 <button class="btn" onclick="filterWoman('w-keybag')"> Ключниця</button>
                             </div>
@@ -647,65 +669,40 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="/js/slider-scroll.js"></script>
-    <script src="/js/scrollToTop.js"></script>
+    <script src="js/slider-scroll.js"></script>
+    <script src="js/scrollToTop.js"></script>
     <script src="js/slider/multislider.js"></script>
     <script src="js/slider-filter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.8/dist/js/bootstrap-select.min.js"></script>
     <script>
         $('#mixedSlider').multislider({
             duration: 750,
             interval: 3000
         });
+        var options ='';
+        $.getJSON("allGoods.json", function(json){
+            $('.form-select').empty();
+            $('.form-select').append($('<option class="form-select--option">').text("Select"));
+            console.log(json);
+            $.each(json, function(i, obj){
+                // options += '<option value=' + obj.code + '>' +  obj.code - obj.name + '</option>';
+                $('.form-select').append($('<option class="form-select--option"></option>').text(`${obj.code} - ${obj.name}`,).attr('value', obj.code));
+            });
+            // $('.form-select').append(options);
+            $('.form-select').selectpicker('refresh');
+        });
+
         $('#bs4-slide-carousel').carousel({
             interval: 3000
         });
-        /*global $, alert,console,window*/
-        $(function() {
 
-            var link = $('#scroll-spy a.dot');
-
-            // Move to specific section when click on menu link
-            link.on('click', function(e) {
-                var target = $($(this).attr('href'));
-                $('html, body').animate({
-                    scrollTop: target.offset().top
-                }, 600);
-                $(this).addClass('active');
-                e.preventDefault();
-            });
-
-            // Run the scrNav when scroll
-            $(window).on('scroll', function() {
-                scrNav();
-            });
-
-            // scrNav function 
-            // Change active dot according to the active section in the window
-            function scrNav() {
-                var sTop = $(window).scrollTop();
-                $('section').each(function() {
-                    var id = $(this).attr('id'),
-                        offset = $(this).offset().top - 65,
-                        height = $(this).height();
-                    if (sTop >= offset && sTop < offset + height) {
-                        link.removeClass('active');
-                        $('#scroll-spy').find('li').removeClass('white-active');
-                        console.log(id);
-                        $('#scroll-spy').find('[data-scroll="' + id + '"]').addClass('active');
-                        if (id == 'advantages' || id == 'howto' || id == 'testimonials') {
-                            $('#scroll-spy').find('li').addClass('white-active');
-                        }
-                    }
-                });
-            }
-            scrNav();
-        });
         $(function() {
             $('form').submit(function(event) {
                 // event.preventDefault();
             });
             return false;
         });
+
         $(function(){
         var $imgSrc,
             $imgElement,
@@ -718,11 +715,11 @@
         $(".filter-item").click(function(e){
           $description = $(this).find('.filter-item--description');
           $modalDescription = $description.clone();
-          $imgElement = $(this).find('img')
+          $imgElement = $(this).find('img');
           folder = `/assets/images/sell/${$imgElement.prop('id')}`;
           $imgSrc = $imgElement.attr('src');
           $("#categoryModal").modal({backdrop: true});
-        });        
+        });
         $('#categoryModal').on('show.bs.modal', function (e) {
           var imgM = $("<img>").attr('src', $imgSrc).addClass('img-fluid');
           $('.category-modal-body').append(imgM);
@@ -742,12 +739,47 @@
             });
             $('.modal-body').append($modalDescription);
         });
+
         $('#categoryModal').on('hidden.bs.modal', function (e) {
           $('.category-modal-body').empty();
           $(".directorySlider").empty();
           arr.length = 0;
         });
       });
+
+        $(function() {
+            $('.send-form').on('submit',function (event) {
+                event.preventDefault();
+                let name = $('input[name="name"]').val(),
+                    from = $('input[name="from"]').val(),
+                    city = $('input[name="city"]').val(),
+                    phone = $('input[name="phone"]').val(),
+                    body = $('textarea[name="body"]').val(),
+                    order = $('select[name="order"]').val();
+                $.ajax({
+                    url: 'http://localhost:3000/send-email',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        name,
+                        from,
+                        phone,
+                        city,
+                        body,
+                        order
+                    }),
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    fail: function(error) {
+                        console.log(error);
+                    }
+                });
+                console.log(this.data);
+                debugger;
+                return false;
+            });
+            });
     </script>
 </body>
 
