@@ -80,10 +80,12 @@
                 <div class="modal-body">
                     <form class="send-form" >
                         <div class="row">
-                            <div class="form-group col-lg-12 mx-auto">
+                            <div class="form-group col-lg-12 mx-auto ">
                                 <!--<select class="form-select">-->
                                 <!--</select>-->
                                 <select name="order" class="selectpicker form-select"></select>
+                                <!--<span class="select-highlight"></span>-->
+                                <!--<span class="select-bar"></span>-->
                                 <!--<select title="Select your surfboard" class="selectpicker">-->
                                     <!--<option>Select...</option>-->
                                     <!--<option data-thumbnail="assets/images/sell/0005/0005-1.jpeg">Сумка</option>-->
@@ -94,7 +96,7 @@
                                     <!--<option data-thumbnail="assets/images/sell/0024/0024-1.jpeg">Сумка</option>-->
                                     <!--<option data-thumbnail="assets/images/sell/0027/0027-1.jpeg">Сумка</option>-->
                                 <!--</select>-->
-                                <label class="form-label">Виберіть товар</label>
+                                <!--<label class="select">Виберіть товар</label>-->
                             </div>
                         </div>
                         <div class="row">
@@ -338,8 +340,8 @@
                 <div class="category-filter row justify-content-center align-content-center">
                     <div class="category-filter-wrapper dropdown">
                         <button class="btn category-filter-button dropdown-toggle" type="button" id="dropdownManMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Для нього
-              </button>
+                            Для нього
+                        </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <div id="manFilterContainer">
                                 <button class="btn active" onclick="filterMan('man')"> Показати всі</button>
@@ -681,16 +683,23 @@
         });
         var options ='';
         $.getJSON("allGoods.json", function(json){
-            $('.form-select').empty();
-            $('.form-select').append($('<option class="form-select--option">').text("Select"));
+            $('.selectpicker').empty();
+            $('.selectpicker').append($('<option class="form-select-default-option">').text("-"));
             console.log(json);
             $.each(json, function(i, obj){
                 // options += '<option value=' + obj.code + '>' +  obj.code - obj.name + '</option>';
-                $('.form-select').append($('<option class="form-select--option"></option>').text(`${obj.code} - ${obj.name}`,).attr('value', obj.code));
+                $('.selectpicker').append($(`<option class='form-select--option'  data-content='<img class="select-img" src="assets/images/sell/${obj.code}/${obj.code}-1.jpeg"/> <p>${obj.name} <br/> Ціна: <span>${obj.price}</span>  </p>'></option>`).text(`${obj.name}`).attr('value', obj.code));
+            });
+            // $('.selectpicker').selectpicker();
+            $('.selectpicker').selectpicker({
+                style: 'btn-primary',
+                showIcon: true
             });
             // $('.form-select').append(options);
-            $('.form-select').selectpicker('refresh');
+            // $('.form-select').selectpicker('refresh');
         });
+
+
 
         $('#bs4-slide-carousel').carousel({
             interval: 3000
@@ -716,8 +725,10 @@
           $description = $(this).find('.filter-item--description');
           $modalDescription = $description.clone();
           $imgElement = $(this).find('img');
-          folder = `/assets/images/sell/${$imgElement.prop('id')}`;
+          folder = `./assets/images/sell/${$imgElement.prop('id')}`;
+
           $imgSrc = $imgElement.attr('src');
+            console.log($imgSrc);
           $("#categoryModal").modal({backdrop: true});
         });
         $('#categoryModal').on('show.bs.modal', function (e) {
@@ -730,6 +741,7 @@
                 success: function (data) {
                     $(data).find("a").attr("href", function (i, val) {
                         if (val.match(/\.(jpe?g|png|gif)$/)) {
+                            console.log(val);
                             arr.push(i);
                             console.log(arr.length);
                             $(".directorySlider").append("<img src='" + val + "' class='img-fluid'>");
