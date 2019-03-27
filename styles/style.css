@@ -35,7 +35,7 @@ START OF GENERAL RULES
 }
 
 #contact {
-    height: calc(60vh - 65px) !important;
+    min-height: calc(60vh - 65px) !important;
 }
 
 #testimonials {
@@ -614,7 +614,7 @@ aboutS
 **************/
 
 #contact {
-    /* padding-top: 65px; */
+    padding-top: 65px;
 }
 
 .contact-container {
