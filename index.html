@@ -54,10 +54,10 @@
         <div class="nav-contacts align-content-center d-none d-xl-flex d-lg-flex">
             <ul class="navbar-social-icons">
                 <li class="navbar-social-icons__item">
-                    <a href="#"><img src="assets/images/facebook.svg" alt="facebook"></a>
+                    <a href="https://www.facebook.com/tribal.ua/" target="_blank" rel="noopener nofollow"><img src="assets/images/facebook.svg" alt="facebook"></a>
                 </li>
                 <li class="navbar-social-icons__item">
-                    <a href="#"><img src="assets/images/instagram.svg" alt="instagram"></a>
+                    <a href="https://www.instagram.com/tribal.leathercraft/" target="_blank" rel="noopener nofollow"><img src="assets/images/instagram.svg" alt="instagram"></a>
                 </li>
             </ul>
         </div>
@@ -324,7 +324,7 @@
                 </div>
             </div>
         </div>
-        <hr style="width:85%">
+        <hr style="width:85%; border: 0.5px solid #E5E5E5;">
     </section>
     <!-- HOWTO ENDS -->
     <!-- CATEGORY START -->
@@ -356,8 +356,8 @@
                     </div>
                     <div class="category-filter-wrapper dropdown">
                         <button class="btn dropdown-toggle category-filter-button" type="button" id="dropdownWomanMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Для неї
-              </button>
+                            Для неї
+                        </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <div id="womanFilterContainer">
                                 <button class="btn active" onclick="filterWoman('woman')"> Показати всі</button>
@@ -535,7 +535,7 @@
                     </div>
                 </div>
             </div>
-            <div class="watermark-wrapper">
+            <div class="watermark-wrapper categories-watermark">
                 <img class="img-fluid" src="assets/images/header-watermark.svg" alt="Watermark">
             </div>
         </div>
@@ -598,12 +598,13 @@
                 </div>
             </div>
         </div>
+        <hr style="width:85%; border: 0.5px solid #E5E5E5;">
     </section>
     <section id="contact">
-        <div class="contact-container contact-parallax">
+        <div class="contact-container category-parallax">
             <div class="contact-wrapper">
                 <h2 class="contact-header text-center section-header">Контакти</h2>
-                <div class="container">
+                <div class="container contact-items--container">
                     <div class="row">
                         <div class="col-lg-4 col-sm-12 contact-item">
                             <div class="contact-item__wrapper row">
@@ -688,7 +689,7 @@
             console.log(json);
             $.each(json, function(i, obj){
                 // options += '<option value=' + obj.code + '>' +  obj.code - obj.name + '</option>';
-                $('.selectpicker').append($(`<option class='form-select--option'  data-content='<img class="select-img" src="assets/images/sell/${obj.code}/${obj.code}-1.jpeg"/> <p>${obj.name} <br/> Ціна: <span>${obj.price}</span>  </p>'></option>`).text(`${obj.name}`).attr('value', obj.code));
+                $('.selectpicker').append($(`<option class='form-select--option'  data-content='<img class="select-img" src="assets/images/sell/${obj.code}/${obj.code}-1.jpeg"/> <p>${obj.name} <br/> Ціна: <span class="form-price">${obj.price}</span> UAH  </p>'></option>`).text(`${obj.name}`).attr('value', obj.code));
             });
             // $('.selectpicker').selectpicker();
             $('.selectpicker').selectpicker({

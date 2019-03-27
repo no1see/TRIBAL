@@ -35,7 +35,7 @@ START OF GENERAL RULES
 }
 
 #contact {
-    height: calc(70vh - 65px) !important;
+    height: calc(60vh - 65px) !important;
 }
 
 #testimonials {
@@ -261,12 +261,17 @@ section#home {
 
 .watermark-wrapper {
     margin: auto;
-    margin-top: 50px;
-    width: 90%;
+    /* margin-top: 50px; */
+    width: 70%;
+}
+
+.categories-watermark {
+    width: 85%;
 }
 
 .watermark-wrapper img {
     width: 100%;
+    /* filter: brightness(2); */
 }
 
 .header-watermark {
@@ -334,7 +339,6 @@ GOODS
 #goods,
 #advantage,
 #about,
-#howto,
 #testimonials {
     padding-top: 65px;
 }
@@ -486,8 +490,10 @@ CATEGORY
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient( 270deg, rgba(22, 25, 34, 0.85) 0%, rgba(22, 25, 34, 0.5185) 49.72%, rgba(22, 25, 34, 0.595) 100%, rgba(22, 25, 34, 0.595) 100%, rgba(22, 25, 34, 0.85) 100%), url('../assets/images/category-background.jpg');
-    background-size: cover;
+    /* background-image: linear-gradient( 270deg, rgba(22, 25, 34, 0.85) 0%, rgba(22, 25, 34, 0.5185) 49.72%, rgba(22, 25, 34, 0.595) 100%, rgba(22, 25, 34, 0.595) 100%, rgba(22, 25, 34, 0.85) 100%), url('../assets/images/category-background.jpg'); */
+    background-image: linear-gradient(270deg, rgba(3, 3, 3, 0.95) 0, rgba(7, 7, 8, 0.922693) 28.18%, rgba(11, 12, 16, 0.884089) 44.2%, rgba(15, 16, 22, 0.854803) 64.09%, rgba(20, 23, 31, 0.810354) 74.8%, rgba(38, 34, 30, 0.717237) 95.32%, rgba(22, 25, 34, 0.665) 100%, rgba(0, 0, 0, 0.95) 100%), url('../assets/images/category-background.jpg');
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    /* background-size: cover; */
     background-attachment: fixed;
     z-index: -1;
     /* overflow: hidden;  */
@@ -517,6 +523,9 @@ CATEGORY
 .category-filter-wrapper {
     margin: 0 10px;
 }
+.category-filter-wrapper .dropdown-menu {
+    width: 250px
+}
 
 .category-filter-button {
     background-color: #fff;
@@ -528,6 +537,7 @@ CATEGORY
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-indent: 15px;
 }
 
 
@@ -542,6 +552,16 @@ CATEGORY
     pointer-events: none;
 }
 
+.dropdown-toggle::after {
+    margin-right: 10px;
+}
+
+#womanFilterContainer, #manFilterContainer {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
 #womanFilterContainer .btn.active,
 #manFilterContainer .btn.active {
     background-color: #CBA77D;
@@ -553,9 +573,9 @@ TESTIMONIALS
 ************/
 
 
-/* .testimonials-wrapper {
-  width: 1200px;
-} */
+.testimonials-wrapper {
+  margin: 60px 0;
+}
 
 .testimonials-item__header {
     display: flex;
@@ -621,10 +641,9 @@ aboutS
     left: 0;
     background-image: linear-gradient(270deg, rgba(3, 3, 3, 0.95) 0, rgba(7, 7, 8, 0.922693) 28.18%, rgba(11, 12, 16, 0.884089) 44.2%, rgba(15, 16, 22, 0.854803) 64.09%, rgba(20, 23, 31, 0.810354) 74.8%, rgba(38, 34, 30, 0.717237) 95.32%, rgba(22, 25, 34, 0.665) 100%, rgba(0, 0, 0, 0.95) 100%);
     transform: matrix(-1, 0, 0, 1, 0, 0);
-    background-size: cover;
+    /* background-size: cover; */
     background-attachment: fixed;
     z-index: -1;
-    /* overflow: hidden;  */
 }
 
 .contact-black-suqare:before {
@@ -640,12 +659,18 @@ aboutS
 
 .contact-wrapper {
     padding: 30px;
+    height: 100%;
 }
 
 .contact-header {
     position: relative;
     color: #fff;
     /* padding: 10px; */
+}
+
+.contact-items--container {
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .contact-item {
@@ -676,15 +701,15 @@ aboutS
 /* back to top button*/
 
 #toTop {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     background: #CBA77D;
     border: none;
     border-radius: 50%;
     color: #fff;
     position: fixed;
     bottom: 20px;
-    right: 75px;
+    right: 35px;
     display: none;
     outline: none;
 }
@@ -708,6 +733,21 @@ footer {
 
 /** SLIDER ****/
 
+.MS-controls {
+    margin: 0 100px 40px 0;
+}
+
+.MS-left, .MS-right {
+    height: 50px;
+    width: 50px;
+    background: #CBA77D;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    outline: none !important;
+    margin: 0 5px;
+}
+
 .exampleSlider .item {
     width: 25%;
 }
@@ -715,6 +755,7 @@ footer {
 #mixedSlider {
     position: relative;
     margin: 70px 0;
+    justify-content: flex-end;
 }
 
 #mixedSlider .MS-content {
@@ -997,6 +1038,25 @@ footer {
     opacity: 0;
 }
 
+.form-select--option.dropdown-item .text, .filter-option-inner-inner{
+    display: flex !important;
+    justify-content: flex-start;
+
+}
+
+.form-select .dropdown-item {
+    padding-right: 0 !important;
+}
+
+.select-img {
+    margin-right: 10px;
+}
+
+.form-price {
+    font-weight: bold;
+}
+
+
 
 /* LABEL ======================================= */
 .form-label {
@@ -1097,111 +1157,3 @@ to 	{ width:0; background:transparent; }
 .inner.show {
     width: 100%;
 }
-/*!* SELECT MATERIAL LIKE*!*/
-/*.select {*/
-    /*font-family:*/
-            /*'Roboto','Helvetica','Arial',sans-serif;*/
-    /*position: relative;*/
-    /*width: 350px;*/
-/*}*/
-
-/*.select-text {*/
-    /*position: relative;*/
-    /*font-family: inherit;*/
-    /*background-color: transparent;*/
-    /*width: 350px;*/
-    /*padding: 10px 10px 10px 0;*/
-    /*font-size: 18px;*/
-    /*border-radius: 0;*/
-    /*border: none;*/
-    /*border-bottom: 1px solid rgba(0,0,0, 0.12);*/
-/*}*/
-
-/*!* Remove focus *!*/
-/*.select-text:focus {*/
-    /*outline: none;*/
-    /*border-bottom: 1px solid rgba(0,0,0, 0);*/
-/*}*/
-
-/*!* Use custom arrow *!*/
-/*.select .select-text {*/
-    /*appearance: none;*/
-    /*-webkit-appearance:none*/
-/*}*/
-
-/*.select:after {*/
-    /*position: absolute;*/
-    /*top: 18px;*/
-    /*right: 10px;*/
-    /*!* Styling the down arrow *!*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*padding: 0;*/
-    /*content: '';*/
-    /*border-left: 6px solid transparent;*/
-    /*border-right: 6px solid transparent;*/
-    /*border-top: 6px solid rgba(0, 0, 0, 0.12);*/
-    /*pointer-events: none;*/
-/*}*/
-
-
-/*!* LABEL ======================================= *!*/
-/*.select-label {*/
-    /*color: rgba(0,0,0, 0.26);*/
-    /*font-size: 18px;*/
-    /*font-weight: normal;*/
-    /*position: absolute;*/
-    /*pointer-events: none;*/
-    /*left: 0;*/
-    /*top: 10px;*/
-    /*transition: 0.2s ease all;*/
-/*}*/
-
-/*!* active state *!*/
-/*.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {*/
-    /*color: #2F80ED;*/
-    /*top: -20px;*/
-    /*transition: 0.2s ease all;*/
-    /*font-size: 14px;*/
-/*}*/
-
-/*!* BOTTOM BARS ================================= *!*/
-/*.select-bar {*/
-    /*position: relative;*/
-    /*display: block;*/
-    /*width: 350px;*/
-/*}*/
-
-/*.select-bar:before, .select-bar:after {*/
-    /*content: '';*/
-    /*height: 2px;*/
-    /*width: 0;*/
-    /*bottom: 1px;*/
-    /*position: absolute;*/
-    /*background: #2F80ED;*/
-    /*transition: 0.2s ease all;*/
-/*}*/
-
-/*.select-bar:before {*/
-    /*left: 50%;*/
-/*}*/
-
-/*.select-bar:after {*/
-    /*right: 50%;*/
-/*}*/
-
-/*!* active state *!*/
-/*.select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {*/
-    /*width: 50%;*/
-/*}*/
-
-/*!* HIGHLIGHTER ================================== *!*/
-/*.select-highlight {*/
-    /*position: absolute;*/
-    /*height: 60%;*/
-    /*width: 100px;*/
-    /*top: 25%;*/
-    /*left: 0;*/
-    /*pointer-events: none;*/
-    /*opacity: 0.5;*/
-/*}*/
