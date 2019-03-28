@@ -4,6 +4,8 @@ var express = require("express"),
     bodyParser = require("body-parser");
 
 var app = express();
+var jsonObj = require("../leather-landing/allGoods.json");
+
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -11,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
     // TODO:
-    // add photo and price to email
+    // aspan photo and price to email
     // IF WEB STORM SERVER
     // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');
 
@@ -28,27 +30,42 @@ app.use(function (req, res, next) {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
 
-    // Pass to next layer of middleware
+    // Pass to next layer of mispanleware
     next();
 });
 var port = 3000;
+function findGoodByCode(code) {
+    return jsonObj.filter(
+        function(jsonObj){return jsonObj.code == code }
+    );
+}
+// var goodObj = findGoodByCode('0005');
+// console.log(goodObj);
 app.get('/', function(req, res) {
     res.render('index');
 });
 app.post("/send-email", function(req, res) {
+    var goodObj = findGoodByCode(req.body.order);
     const output = `
-     <b>У вас нове замовлення</b>
-    <h3>Деталі замовлення</h3>
-    <p> <b> &#8226; ТОВАР </b> ${req.body.order}</p>
-    <ul>
-      <li>Ім\'я прізвище: ${req.body.name}</li>
-      <li>Місто відправлення: ${req.body.city}</li>
-      <li>Email: ${req.body.from}</li>
-      <li>Телефон: ${req.body.phone}</li>
-    </ul>
-    <h3>Повідомлення</h3>
-    <p>${req.body.body}</p>
-  `;
+        <h1>У вас нове замовлення</h1>
+        <h3>Деталі замовлення:</h3>
+    
+        <p> <b> ТОВАР </b> </p>
+        <img src="cid:${req.body.order}-1.jpeg" alt="Фото товару" style="width: 250px; height: auto;">
+        <p><b>Код товару </b><span>${req.body.order}</span></p>
+        <p><b>Назва товару </b><span>${goodObj[0].name}</span></p>
+        <p><b>Ціна товару </b><span>${goodObj[0].price} грн.</span></p>
+
+        <h3>Деталі замовника:</h3>
+
+        <p><b>Ім\'я прізвище:</b><span>${req.body.name}</span></p>
+        <p><b>Місто відправлення:</b><span>${req.body.city}</span></p>
+        <p><b>Email:</b><span>${req.body.from}</span></p>
+        <p><b>Телефон:</b><span>${req.body.phone}</span></p>
+
+        <h3>Повідомлення</h3>
+        <p>${req.body.body}</p>
+    `;
     let transporter = nodeMailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,
@@ -65,11 +82,18 @@ app.post("/send-email", function(req, res) {
     console.log(req.body.to);
     
     let mailOptions = {
-        from: `"Tribal site" <${req.body.from}>`, // sender address
+        from: `"Tribal site" <${req.body.from}>`, // sender aspanress
         to: req.body.to, // list of receivers
         subject: "Order from Tribal", // Subject line
-        html: output // html body
+        html: output, // html body
         // text: req.body.body, // plain text body
+        attachments: [
+            {
+              filename: `${req.body.order}-1.jpeg`,
+              path:  'assets/images/sell/'+ req.body.order + '/'+ req.body.order + '-1.jpeg',
+              cid: `${req.body.order}-1.jpeg` 
+            }
+          ]
     };
 
     transporter.sendMail(mailOptions, function(error, info) {

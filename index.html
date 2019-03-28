@@ -70,8 +70,10 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <div class="modal-header--container mx-auto d-flex">
+                    <div class="modal-header--container ">
                         <h4 class="modal-title ">Форма відправки листа</h4>
+                    </div>
+                    <div class="modal-header--container close-btn ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                 </div>
@@ -83,8 +85,11 @@
                 <div class="modal-body">
                     <form class="send-form" >
                         <div class="row">
-                            <div class="form-group col-lg-12 mx-auto ">
-                                <select name="order" class="selectpicker form-select"></select>
+                            <div class="form-group select-group col-lg-12 mx-auto ">
+                                <select name="order" class="selectpicker form-select" id="form-selector"></select>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label class="form-selectlabel form-label">Виберіть товар</label>
                             </div>
                         </div>
                         <div class="row">
@@ -97,7 +102,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-12 mx-auto">     
-                                <input class="form-input" type="email" name="from" required>
+                                <input class="form-input form-input-email" type="email" name="from" value=""  onkeyup="this.setAttribute('value', this.value);" required>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label class="form-label">Введіть ваш e-mail</label>
@@ -129,16 +134,21 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-12 mx-auto">
-                                <button type="submit" class="form-submit btn btn-success">Надіслати повідомлення</button>
+                                <button type="submit" class="form-submit">Надіслати повідомлення</button>
                             </div>
                         </div>
                     </form>
                 </div>
 
                 <!-- Modal footer -->
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div> -->
+                <div class="modal-footer">
+                    <div class="modal-footer--wrapper">
+                        <img src="assets/images/data-security.svg" alt="Data secirity">
+                        <dov class="modal-footer--content">
+                            <p class="modal-footer--content__text">Ми гарантуємо безпеку персональних даних. Ваші контакти  ніколи не будуть передані третім лицям. </p>
+                        </dov>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -671,6 +681,17 @@
     <script src="js/slider-filter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.8/dist/js/bootstrap-select.min.js"></script>
     <script>
+        // $('#formModal').on('show.bs.modal', function() {
+        //     $(".form-input-email").focus().text('s');
+        //     $(".form-input-email").empty().focus();
+        //     // $(".form-input").focus().empty();
+        //     // $('.send-form')[0].reset();
+        //     // $('.form-input-email').empty();
+        //     // $('.form-input-email').val(' ');
+        //     // $('.form-input-email').val('');
+        //     // $('.form-input-email').focusout();
+        //     console.log($('.form-input-email').text().length);
+        // });
         $('#mixedSlider').multislider({
             duration: 750,
             interval: 3000
@@ -686,15 +707,25 @@
             });
             // $('.selectpicker').selectpicker();
             $('.selectpicker').selectpicker({
-                style: 'btn-primary',
+                style: 'btn-toggler',
                 showIcon: true
             });
-            // $('.form-select').append(options);
-            // $('.form-select').selectpicker('refresh');
+           
+            
         });
 
-
-
+        $('#form-selector').on('changed.bs.select', function(e, clickedIndex, newValue, oldValue) {
+            var selectedD = $(this).find('option').eq(clickedIndex).text();
+            console.log('selectedD: ' + selectedD + '  newValue: ' + newValue + ' oldValue: ' + oldValue);
+            if (selectedD == "-") {
+                $('.form-selectlabel').removeClass('activated').addClass('deactivated');
+                $('.select-group').removeClass('select-group-true')
+            } else {
+                $('.form-selectlabel').removeClass('deactivated').addClass('activated');
+                $('.select-group').addClass('select-group-true')
+            }
+        });
+        
         $('#bs4-slide-carousel').carousel({
             interval: 3000
         });

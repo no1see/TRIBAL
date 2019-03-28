@@ -2,8 +2,10 @@ body,
 h1,
 h2,
 h3,
-p {
+p,
+input{
     font-family: 'Lato', sans-serif;
+    color: #636363;
 }
 
 
@@ -293,13 +295,10 @@ section#advantages {
     margin: 0 auto;
 }
 
-.advantages-item {
-    /* width: 230px; */
-    /* height: 200px; */
-}
-
-
-/* @media screen and (max-width:) */
+/* .advantages-item {
+    width: 230px;
+    height: 200px;
+} */
 
 .advantages-item__image-wrapper {
     display: flex;
@@ -527,6 +526,14 @@ CATEGORY
     width: 250px
 }
 
+.dropdown-menu.inner.show li a:hover {
+    background-color: #CBA77D !important;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: #CBA77D !important;
+}
+
 .category-filter-button {
     background-color: #fff;
     color: #000;
@@ -727,9 +734,6 @@ footer {
     color: #fff;
     margin: 0;
 }
-
-.footer-copyright {}
-
 
 /** SLIDER ****/
 
@@ -958,24 +962,6 @@ footer {
     border-color: #CBA77D;
 }
 
-
-/* .white-active .dot::before,
-.white-active:hover .dot::before {
-  background: #000 !important;
-  border-color: #000 !important;
-}
-
-.scroll-spy .scroll-spy-menu .white-active .dot::after,
-.white-active .dot::after {
-  border: 2px solid #000;
-}
-
-.white-active .dot {
-  display: block;
-  color: #000;
-  padding: 5px 0;
-} */
-
 .scroll-spy .scroll-spy-menu li .dot.active::after,
 .scroll-spy .scroll-spy-menu li:hover .dot::after {
     transform: translateY(-50%) scale(1);
@@ -983,8 +969,21 @@ footer {
 
 
 /* End Nav Styles */
+
+.close-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+.modal-header {
+    justify-content: center;
+}
+.modal-title {
+    text-transform: uppercase;
+}
 #formModal .modal {
     padding: 0 15px !important;
+    position: relative;
 }
 #formModal .modal-dialog {
     max-width: unset;
@@ -1001,7 +1000,35 @@ footer {
     width: auto;
     min-width: 100%;
     border-radius: 1.5rem;
-  }
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.modal-footer--wrapper {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.modal-footer--content {
+    padding: 15px;
+}
+
+.modal-footer--content__text {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
 /* MATERIAL LIKE INPUTS */
 .send-form {
     display: flex;
@@ -1010,28 +1037,45 @@ footer {
     align-items: center;
     align-content: center;
     padding: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .form-group {
-    position:relative; 
-    margin-bottom:45px; 
-  }
+    position:relative;
+    margin-bottom:45px;
+}
+
+.select-group-true {
+    margin-bottom: 60px;
+}
+
+.form-submit {
+    width: 450px;
+    height: 60px;
+    border-radius: 2rem;
+    background-color: #CBA77D;
+    border: none;
+    /* padding: 10px; */
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25)
+}
+
 .form-input {
     font-size:18px;
     padding:10px 10px 10px 5px;
     display:block;
-    width:300px;
+    width:450px;
     border:none;
-    border-bottom:1px solid #757575;
+    border-bottom:1px solid #c5c5c5;
 }
 .form-input:focus {
     outline:none;
 }
 .form-select {
     height: 50px;
-    width: 300px !important;
-    /*border: 1px solid red;*/
+    width: 450px !important;
+    border-bottom:1px solid #c5c5c5;
 }
 
 .form-select-default-option {
@@ -1041,7 +1085,21 @@ footer {
 .form-select--option.dropdown-item .text, .filter-option-inner-inner{
     display: flex !important;
     justify-content: flex-start;
+}
 
+.btn-toggler {
+    background-color: #CBA77D;
+    /* border-bottom: 1px solid #CBA77D; */
+}
+
+.btn-toggler[title='-'] {
+    background-color: #fff;
+    /* border-bottom: 1px solid #c5c5c5; */
+    color: #fff;
+}
+
+.btn-toggler::after {
+    color: #636363;
 }
 
 .form-select .dropdown-item {
@@ -1059,7 +1117,21 @@ footer {
 
 
 /* LABEL ======================================= */
-.form-label {
+.form-select.show ~ .form-label, .form-label.activated {
+    top:-20px;
+    font-size:14px;
+    color:#CBA77D;
+}
+
+
+
+.dropdown-toggle ~ .form-label {
+    top:-20px !important;
+    font-size:14px !important;
+    color:#CBA77D !important;
+}
+
+.form-label, .dropdown-toggle[title='-'] ~ .form-label {
     color:#999; 
     font-size:18px;
     font-weight:normal;
@@ -1083,15 +1155,37 @@ footer {
 }
 
 /* active state */
-.form-input:focus ~ .form-label, .form-input:valid ~ .form-label 		{
+.form-input:focus ~ .form-label, .form-input:valid ~ .form-label {
     top:-20px;
     font-size:14px;
     color:#CBA77D;
 }
 
+.form-input-email:not(:empty):invalid ~ .form-label {
+    top:-20px;
+    font-size:14px;
+    color: red;
+}
+
+.form-input-email:not([value=""]):not(:focus):not(:valid) ~ .form-label{
+    top: -20px;
+    font-size: 14px;
+    color: red;
+}
+
+.form-input-email:not([value=""]):not(:focus):not(:valid) ~ .form-label::before {
+    content: "Неправильні дані";
+    position: absolute;
+    bottom: -70px;
+    font-size: 14px;
+    color: red;
+}
+
 /* BOTTOM BARS ================================= */
 .bar {
-    position:relative; display:block; width:300px;
+    position:relative;
+    display:block;
+    width:450px;
 }
 
 .bar:before, .bar:after {
@@ -1129,7 +1223,7 @@ footer {
 }
 
 /* active state */
-.form-input:focus ~ .highlight {
+.form-input:focus ~ .highlight, .form-input:active ~ .highlight {
     -webkit-animation:inputHighlighter 0.3s ease;
     -moz-animation:inputHighlighter 0.3s ease;
     animation:inputHighlighter 0.3s ease;
