@@ -3,7 +3,8 @@ h1,
 h2,
 h3,
 p,
-input{
+input,
+textarea {
     font-family: 'Lato', sans-serif;
     color: #636363;
 }
@@ -295,6 +296,7 @@ section#advantages {
     margin: 0 auto;
 }
 
+
 /* .advantages-item {
     width: 230px;
     height: 200px;
@@ -522,6 +524,7 @@ CATEGORY
 .category-filter-wrapper {
     margin: 0 10px;
 }
+
 .category-filter-wrapper .dropdown-menu {
     width: 250px
 }
@@ -530,7 +533,8 @@ CATEGORY
     background-color: #CBA77D !important;
 }
 
-.dropdown-item.active, .dropdown-item:active{
+.dropdown-item.active,
+.dropdown-item:active {
     background-color: #CBA77D !important;
 }
 
@@ -563,7 +567,8 @@ CATEGORY
     margin-right: 10px;
 }
 
-#womanFilterContainer, #manFilterContainer {
+#womanFilterContainer,
+#manFilterContainer {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -579,9 +584,8 @@ CATEGORY
 TESTIMONIALS
 ************/
 
-
 .testimonials-wrapper {
-  margin: 60px 0;
+    margin: 60px 0;
 }
 
 .testimonials-item__header {
@@ -635,7 +639,7 @@ aboutS
                     ),
                     url('/assets/images/most-popular.jpg');
   background-size: cover; */
-  height: inherit;
+    height: inherit;
     overflow: hidden;
 }
 
@@ -735,13 +739,15 @@ footer {
     margin: 0;
 }
 
+
 /** SLIDER ****/
 
 .MS-controls {
     margin: 0 100px 40px 0;
 }
 
-.MS-left, .MS-right {
+.MS-left,
+.MS-right {
     height: 50px;
     width: 50px;
     background: #CBA77D;
@@ -901,6 +907,8 @@ footer {
         animation-duration: 1.5s
     }
 }
+
+
 /* Start Nav Styles */
 
 .scroll-spy {
@@ -975,16 +983,22 @@ footer {
     right: 30px;
     top: 20px;
 }
+
 .modal-header {
     justify-content: center;
 }
+
 .modal-title {
     text-transform: uppercase;
 }
+
+#categoryModal .modal,
 #formModal .modal {
     padding: 0 15px !important;
     position: relative;
 }
+
+#categoryModal .modal-dialog,
 #formModal .modal-dialog {
     max-width: unset;
     width: 100%;
@@ -992,8 +1006,9 @@ footer {
     margin: 0;
     margin-top: 30px;
     padding: 0;
-  }
+}
 
+#categoryModal .modal-content,
 #formModal .modal-content {
     height: auto;
     min-height: 100%;
@@ -1029,7 +1044,47 @@ footer {
     padding: 0;
     font-size: 12px;
 }
+
+#categoryModal .row {
+    /* float: left; */
+    width: 25%;
+    padding: 10px;
+}
+
+
+/* Style the images inside the grid */
+
+#categoryModal .row img {
+    opacity: 0.8;
+    cursor: pointer;
+    width: 350px;
+    height: 200px;
+}
+
+#categoryModal .column img:hover {
+    opacity: 1;
+}
+
+
+/* Clear floats after the columns */
+
+#categoryModal .directorySlider:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* The expanding image container */
+
+#categoryModal .container {
+    position: relative;
+    display: none;
+}
+
+
 /* MATERIAL LIKE INPUTS */
+
 .send-form {
     display: flex;
     flex-direction: column;
@@ -1041,8 +1096,8 @@ footer {
 }
 
 .form-group {
-    position:relative;
-    margin-bottom:45px;
+    position: relative;
+    margin-bottom: 45px;
 }
 
 .select-group-true {
@@ -1062,27 +1117,30 @@ footer {
 }
 
 .form-input {
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:450px;
-    border:none;
-    border-bottom:1px solid #c5c5c5;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 450px;
+    border: none;
+    border-bottom: 1px solid #c5c5c5;
 }
+
 .form-input:focus {
-    outline:none;
+    outline: none;
 }
+
 .form-select {
     height: 50px;
     width: 450px !important;
-    border-bottom:1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
 }
 
 .form-select-default-option {
     opacity: 0;
 }
 
-.form-select--option.dropdown-item .text, .filter-option-inner-inner{
+.form-select--option.dropdown-item .text,
+.filter-option-inner-inner {
     display: flex !important;
     justify-content: flex-start;
 }
@@ -1115,65 +1173,69 @@ footer {
 }
 
 
-
 /* LABEL ======================================= */
-.form-select.show ~ .form-label, .form-label.activated {
-    top:-20px;
-    font-size:14px;
-    color:#CBA77D;
+
+.form-select.show~.form-label,
+.form-label.activated {
+    top: -20px;
+    font-size: 14px;
+    color: #CBA77D;
 }
 
-
-
-.dropdown-toggle ~ .form-label {
-    top:-20px !important;
-    font-size:14px !important;
-    color:#CBA77D !important;
+.dropdown-toggle~.form-label {
+    top: -20px !important;
+    font-size: 14px !important;
+    color: #CBA77D !important;
 }
 
-.form-label, .dropdown-toggle[title='-'] ~ .form-label {
-    color:#999; 
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:15px;
-    top:10px;
+.form-label,
+.dropdown-toggle[title='-']~.form-label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 10px;
     width: 300px;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
 }
 
-.form-input[type=number]::-webkit-inner-spin-button, 
-.form-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+.form-input[type=number]::-webkit-inner-spin-button,
+.form-input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 .form-input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
+
 
 /* active state */
-.form-input:focus ~ .form-label, .form-input:valid ~ .form-label {
-    top:-20px;
-    font-size:14px;
-    color:#CBA77D;
+
+.form-input:focus~.form-label,
+.form-input:valid~.form-label {
+    top: -20px;
+    font-size: 14px;
+    color: #CBA77D;
 }
 
-.form-input-email:not(:empty):invalid ~ .form-label {
-    top:-20px;
-    font-size:14px;
-    color: red;
-}
-
-.form-input-email:not([value=""]):not(:focus):not(:valid) ~ .form-label{
+.form-input-email:not(:empty):invalid~.form-label {
     top: -20px;
     font-size: 14px;
     color: red;
 }
 
-.form-input-email:not([value=""]):not(:focus):not(:valid) ~ .form-label::before {
+.form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label {
+    top: -20px;
+    font-size: 14px;
+    color: red;
+}
+
+.form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label::before {
     content: "Неправильні дані";
     position: absolute;
     bottom: -70px;
@@ -1181,66 +1243,98 @@ footer {
     color: red;
 }
 
+
 /* BOTTOM BARS ================================= */
+
 .bar {
-    position:relative;
-    display:block;
-    width:450px;
+    position: relative;
+    display: block;
+    width: 450px;
 }
 
-.bar:before, .bar:after {
-    content:'';
-    height:2px; 
-    width:0;
-    bottom:1px; 
-    position:absolute;
-    background:#CBA77D;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
-}
-.bar:before {
-    left:50%;
-}
+.bar:before,
 .bar:after {
-    right:50%; 
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #CBA77D;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
 }
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
 
 /* active state */
-.form-input:focus ~ .bar:before, .form-input:focus ~ .bar:after {
-    width:50%;
+
+.form-input:focus~.bar:before,
+.form-input:focus~.bar:after {
+    width: 50%;
 }
+
 
 /* HIGHLIGHTER ================================== */
+
 .highlight {
-    position:absolute;
-    height:60%; 
-    width:100px; 
-    top:25%; 
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
 }
+
 
 /* active state */
-.form-input:focus ~ .highlight, .form-input:active ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
+
+.form-input:focus~.highlight,
+.form-input:active~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
 }
 
+
 /* ANIMATIONS ================ */
+
 @-webkit-keyframes inputHighlighter {
-    from { background:#CBA77D; }
-to 	{ width:0; background:transparent; }
+    from {
+        background: #CBA77D;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
 }
+
 @-moz-keyframes inputHighlighter {
-    from { background:#CBA77D; }
-to 	{ width:0; background:transparent; }
+    from {
+        background: #CBA77D;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
 }
+
 @keyframes inputHighlighter {
-    from { background:#CBA77D; }
-to 	{ width:0; background:transparent; }
+    from {
+        background: #CBA77D;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
 }
 
 .select-img {
