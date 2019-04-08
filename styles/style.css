@@ -1071,7 +1071,7 @@ footer {
 .category-modal--wrapper {
     display: flex;
     flex-direction: row;
-    /* width: 50%; */
+    max-width: 50%;
 }
 
 
