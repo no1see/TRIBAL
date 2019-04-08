@@ -1045,33 +1045,50 @@ footer {
     font-size: 12px;
 }
 
-#categoryModal .row {
-    /* float: left; */
-    width: 25%;
-    padding: 10px;
+#categoryModal .rows {
+    padding-bottom: 10px;
 }
 
 
 /* Style the images inside the grid */
 
-#categoryModal .row img {
+#categoryModal .rows img {
     opacity: 0.8;
     cursor: pointer;
-    width: 350px;
-    height: 200px;
+    width: 150px;
+    height: 80px;
 }
 
 #categoryModal .column img:hover {
     opacity: 1;
 }
 
+.category-modal-body {
+    display: flex;
+    flex-direction: row;
+}
 
+.category-modal--wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+
+.directorySlider {
+    padding: 10px;
+}
 /* Clear floats after the columns */
 
 #categoryModal .directorySlider:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.main-image-container {
+    width: 70%;
+    padding: 10px;
 }
 
 

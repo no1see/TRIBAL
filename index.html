@@ -383,8 +383,30 @@
                                     <img src="assets/images/sell/0005/0005-2.jpeg" id="0005" alt="Ключниця">
                                 </div>
                                 <div class="filter-item--description">
-                                    <h1>test</h1>
-                                    <p>some text</p>
+                                    <div class="item-description">
+                                        <div class="item-description--header">
+                                            <h1 class="item-description--name">test</h1>
+                                            <p class="item-description--code">Код товару: <span class="item-description--id">0005</span></p>
+                                        </div>
+                                        <div class="item-description--content">
+                                            <p class="item-description--main-content">
+                                                Портефль виконаний з натуральної телячої шкіри.
+                                                Прошитий вручну воскованою ниткою товщиною 1мм Габарити: 15.5 см в закритому вигляді.
+                                            </p>
+                                            <p class="item-description--additional-content">
+                                                В середині одне загальне відділення для документів чи ноутбука + пристінне   відділення закривається на замок
+                                                Ззовні два відділення для інших речей закриваються на кнопки.
+                                                Все накривається клапаном і закривається на ремінні пряжки.
+                                                При потребі додатково можна замовити ремінь через плече.
+                                                Підкладку в наших виробах не використовуємо
+                                            </p>
+                                            <p class="item-description--variability">
+                                                Колір ниток і шкіри на вибір
+                                            </p>
+                                        </div>
+                                        <p class="item-description--price">1000 грн</p>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="item filter-item woman w-keybag">
@@ -762,7 +784,7 @@
                 var imgM = $("<img>").attr('src', $imgSrc).addClass('img-fluid');
                 $('.category-modal-body').append(imgM);
                 $('.category-modal-body').append($modalDescription);
-                $('.category-modal-body').html('<div class="directorySlider"></div><div class="container"><span="this.parentElement.style.display="none"" class="closebtn">&times;</span> <img id="expandedImg" style="width:100%"> <div id="imgtext"></div> </div>');
+                $('.category-modal-body').html('<div class="category-modal--wrapper"><div class="directorySlider"></div><div class="main-image-container"><img id="expandedImg" style="width:100%"> <div id="imgtext"></div> </div> </div>');
                 $.ajax({
                     url: folder,
                     success: function(data) {
@@ -771,12 +793,12 @@
                                 console.log(val);
                                 arr.push(i);
                                 console.log(arr.length);
-                                $(".directorySlider").append("<div class='row'><img src='" + val + "' class='issmg-fluid' onclick='myFunction(this);'></div>");
+                                $(".directorySlider").append("<div class='rows'><img src='" + val + "' class='img-fluid' onclick='myFunction(this);'></div>");
                             }
                         });
                     }
                 });
-                $('.modal-body').append($modalDescription);
+                $('.category-modal-body').append($modalDescription);
             });
 
             $('#categoryModal').on('hidden.bs.modal', function(e) {
