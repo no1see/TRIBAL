@@ -386,6 +386,7 @@ GOODS
 
 .carousel-item .goods-item {
     width: 70%;
+    /* only for ~900px */
 }
 
 .goods-item {
