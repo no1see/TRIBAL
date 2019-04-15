@@ -373,6 +373,10 @@ GOODS
     /* overflow: hidden;  */
 }
 
+.goods-container {
+    margin: 0 5%;
+}
+
 .goods-wrapper {
     padding: 30px;
     /* margin: 0 240px; */
@@ -1192,6 +1196,10 @@ footer {
     border-bottom: 1px solid #c5c5c5;
 }
 
+/* .form-input.form-input-number {
+    width: 250px;
+} */
+
 .form-input:focus {
     outline: none;
 }
@@ -1411,4 +1419,12 @@ footer {
 
 .inner.show {
     width: 100%;
+}
+
+
+.dropdown-menu.show {
+    transform: none !important;
+    top: 75px !important;
+    height: 600px !important;
+
 }
