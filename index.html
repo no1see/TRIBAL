@@ -13,11 +13,9 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900;subset=latin-ext" rel="stylesheet"> </head>
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.8/css/bootstrap-select.css" />-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.8/dist/css/bootstrap-select.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.8/dist/css/bootstrap-select.min.css">
+</head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
     <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-black">
@@ -33,9 +31,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#home">Головна <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#goods">Товар</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="#categories">Каталог</a>
                 </li>
@@ -141,7 +139,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-lg-12 mx-auto">
+                            <div class="form-group form-group-submit col-lg-12 mx-auto">
                                 <button type="submit" class="form-submit">Надіслати повідомлення</button>
                             </div>
                         </div>
@@ -172,7 +170,7 @@
                     <p class="lead header-description ">
                         Бренд TRIBAL гарантує якість, також ми запаковуємо в фірмову упаковку, комбінуємо подарункові набори, наносимо іменне гравіювання.
                     </p>
-                    <p class="lead">
+                    <p class="lead header-button">
                         <a class="btn btn-lg header-content__btn" href="#advantages" role="button">Дізнатися більше</a>
                     </p>
                 </div>
@@ -292,7 +290,10 @@
                                 </div>
                                 
                             </div>
-                            <p class="goods-item__price">750грн. &nbsp; <span>900грн.</span></p>
+                            <div class="goods-desc">
+                                <p class="goods-item__price">750грн. &nbsp; <span>900грн.</span></p>
+                                <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-3  goods-item">
                             <div class="imgTitle">
@@ -339,7 +340,10 @@
                                     <p class="item-description--price">1190 грн</p>
                                 </div>
                             </div>
-                            <p class="goods-item__price">1190рн. &nbsp; <span>1665грн.</span></p>
+                            <div class="goods-desc">
+                                <p class="goods-item__price">1190рн. &nbsp; <span>1300грн.</span></p>
+                                <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-3  goods-item">
                             <div class="imgTitle">
@@ -383,7 +387,10 @@
                                     <p class="item-description--price">920 грн</p>
                                 </div>
                             </div>
-                            <p class="goods-item__price">920рн. &nbsp; <span>1665грн.</span></p>
+                            <div class="goods-desc">
+                                <p class="goods-item__price">920рн. &nbsp; <span>1100грн.</span></p>
+                                <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-3  goods-item">
                             <div class="imgTitle">
@@ -427,7 +434,10 @@
                                     <p class="item-description--price">470 грн</p>
                                 </div>
                             </div>
-                            <p class="goods-item__price">470рн. &nbsp; <span>1665грн.</span></p>
+                            <div class="goods-desc">
+                                <p class="goods-item__price">470рн. &nbsp; <span>600грн.</span></p>
+                                <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                            </div>
                         </div>
                     </div>
 
@@ -478,7 +488,10 @@
                                         </div>
                                         
                                     </div>
-                                    <p class="goods-item__price">750грн. &nbsp; <span>900грн.</span></p>
+                                    <div class="goods-desc">
+                                        <p class="goods-item__price">750грн. &nbsp; <span>900грн.</span></p>
+                                        <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -527,7 +540,10 @@
                                             <p class="item-description--price">1190 грн</p>
                                         </div>
                                     </div>
-                                    <p class="goods-item__price">1190рн. &nbsp; <span>1665грн.</span></p>
+                                    <div class="goods-desc">
+                                        <p class="goods-item__price">1190рн. &nbsp; <span>1665грн.</span></p>
+                                        <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -573,7 +589,10 @@
                                             <p class="item-description--price">920 грн</p>
                                         </div>
                                     </div>
-                                    <p class="goods-item__price">920рн. &nbsp; <span>1665грн.</span></p>
+                                    <div class="goods-desc">
+                                        <p class="goods-item__price">920рн. &nbsp; <span>1665грн.</span></p>
+                                        <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -619,7 +638,10 @@
                                             <p class="item-description--price">470 грн</p>
                                         </div>
                                     </div>
-                                    <p class="goods-item__price">470рн. &nbsp; <span>1665грн.</span></p>
+                                    <div class="goods-desc">
+                                        <p class="goods-item__price">470рн. &nbsp; <span>1665грн.</span></p>
+                                        <p class="goods-item__free">Іменне гравіювання в подарунок</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -672,12 +694,11 @@
     <!-- CATEGORY START -->
     <section id="categories">
         <div class="category-container category-parallax">
-            <!-- <div class="category-black-suqare"></div> -->
-            <div class="row">
-                <div class="col-lg-12">
+            <!-- <div class="row"> -->
+                <!-- <div class="col-lg-12"> -->
                     <h1 class="text-center category-header section-header">Категорії</h1>
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
             <div class="category-wrapper">
                 <div class="category-filter row justify-content-center align-content-center">
                     <div class="category-filter-wrapper dropdown">
@@ -754,7 +775,11 @@
                                         </div>
                                         <p class="item-description--price">400 грн</p>
                                     </div>
-                                    
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Ключниця TRIBAL</p>
+                                    <p class="category-item__price">750грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item woman w-keybag">
@@ -793,7 +818,11 @@
                                         </div>
                                         <p class="item-description--price">400 грн</p>
                                     </div>
-                                    
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Ключниця TRIBAL</p>
+                                    <p class="category-item__price">400грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item woman w-portmone">
@@ -837,7 +866,11 @@
                                         </div>
                                         <p class="item-description--price">920 грн</p>
                                     </div>
-                                    
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">920грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-portmone">
@@ -881,7 +914,11 @@
                                         </div>
                                         <p class="item-description--price">750 грн</p>
                                     </div>
-                                    
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">750грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-portmone">
@@ -922,6 +959,11 @@
                                         </div>
                                         <p class="item-description--price">750 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">750грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item woman w-portmone">
@@ -965,6 +1007,11 @@
                                         </div>
                                         <p class="item-description--price">920 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">920грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-portmone">
@@ -1012,6 +1059,11 @@
                                         <p class="item-description--price">850 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">850грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-belt">
                                 <div class="imgTitle">
@@ -1048,6 +1100,11 @@
                                         </div>
                                         <p class="item-description--price">1050 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Ремінь TRIBAL</p>
+                                    <p class="category-item__price">1050грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-bag">
@@ -1091,6 +1148,11 @@
                                         </div>
                                         <p class="item-description--price">2790 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Сумка TRIBAL</p>
+                                    <p class="category-item__price">2790грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-travelcase">
@@ -1141,6 +1203,11 @@
                                         <p class="item-description--price">1350 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Тревел кейс TRIBAL</p>
+                                    <p class="category-item__price">1350грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-moneyhandler">
                                 <div class="imgTitle">
@@ -1183,6 +1250,11 @@
                                         </div>
                                         <p class="item-description--price">470 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Прижим для куп'юр</p>
+                                    <p class="category-item__price">470грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-portmone">
@@ -1230,6 +1302,11 @@
                                         <p class="item-description--price">1190 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Портмоне TRIBAL</p>
+                                    <p class="category-item__price">1190грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item woman w-portmone">
                                 <div class="imgTitle">
@@ -1275,6 +1352,11 @@
                                         </div>
                                         <p class="item-description--price">1200 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">1200грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-portmone">
@@ -1326,6 +1408,11 @@
                                         <p class="item-description--price">2190 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">2190грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-travelcase">
                                 <div class="imgTitle">
@@ -1375,6 +1462,11 @@
                                         <p class="item-description--price">1350 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Тревел кейс TRIBAL</p>
+                                    <p class="category-item__price">1350грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-portmone">
                                 <div class="imgTitle">
@@ -1420,6 +1512,11 @@
                                         </div>
                                         <p class="item-description--price">800 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">800грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-bag">
@@ -1470,6 +1567,11 @@
                                         <p class="item-description--price">4990 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Портфель TRIBAL</p>
+                                    <p class="category-item__price">4990грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-bag">
                                 <div class="imgTitle">
@@ -1513,6 +1615,11 @@
                                         <p class="item-description--price">2990 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Сумка TRIBAL</p>
+                                    <p class="category-item__price">2990грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-helper">
                                 <div class="imgTitle">
@@ -1555,6 +1662,11 @@
                                         </div>
                                         <p class="item-description--price">2350 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Розгрузка для фотографів</p>
+                                    <p class="category-item__price">2350грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item man m-bag">
@@ -1605,6 +1717,11 @@
                                         <p class="item-description--price">7470 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Саквояж TRIBAL</p>
+                                    <p class="category-item__price">7470грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-bag">
                                 <div class="imgTitle">
@@ -1650,6 +1767,11 @@
                                         </div>
                                         <p class="item-description--price">5490 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Рюкзак TRIBAL</p>
+                                    <p class="category-item__price">5490грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                             <div class="item filter-item woman w-bag">
@@ -1697,6 +1819,11 @@
                                         <p class="item-description--price">3190 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Сумка(шопер) TRIBAL</p>
+                                    <p class="category-item__price">3190грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item woman w-portmone">
                                 <div class="imgTitle">
@@ -1743,6 +1870,11 @@
                                         <p class="item-description--price">1190 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Гаманець TRIBAL</p>
+                                    <p class="category-item__price">1190грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item man m-moneyhandler">
                                 <div class="imgTitle">
@@ -1786,6 +1918,11 @@
                                         <p class="item-description--price">490 грн</p>
                                     </div>
                                 </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Прижим для куп'юр</p>
+                                    <p class="category-item__price">490грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
+                                </div>
                             </div>
                             <div class="item filter-item woman w-keybag">
                                 <div class="imgTitle">
@@ -1825,6 +1962,11 @@
                                         </div>
                                         <p class="item-description--price">400 грн</p>
                                     </div>
+                                </div>
+                                <div class="category-desc">
+                                    <p class="category-item__name">Ключниця TRIBAL</p>
+                                    <p class="category-item__price">400грн.</p>
+                                    <p class="category-item__free">Іменне гравіювання в подарунок</p>
                                 </div>
                             </div>
                         </div>
@@ -1873,7 +2015,7 @@
                         </div>
                         <div class="testimonials-item__content">
                             <div class="testimonials-user">
-                                <h3 class="testimonials-user__name">Lyudmila Bogdanovich</h3>
+                                <h3 class="testimonials-user__name">Anastasiya Velychko</h3>
                                 <span class="testimonials-user__role">Покупець</span>
                             </div>
                             <p class="testimonials-user__comment">
@@ -1984,7 +2126,7 @@
             </div>
         </div>
     </footer>
-    <button id="toTop"><img src="assets/images/back-to-top-arrow.svg" alt="back to top"></button>
+    <button id="toTop"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
