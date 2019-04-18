@@ -29,8 +29,10 @@ START OF GENERAL RULES
     color: #929495;
 }
 
-#categories {
-    height: calc(100vh - 65px) !important;
+@media screen and (max-width: 1560px) {
+    #categories {
+        height: calc(100vh - 65px) !important;
+    }
 }
 
 .category-container {
@@ -456,7 +458,7 @@ GOODS
 }
 
 .goods-item__image {
-    height: 300px;
+    max-height: 300px;
     padding-bottom: 10px;
 }
 
@@ -511,14 +513,15 @@ advantage
 .howto-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .howto-item__header {
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 600;
     font-style: normal;
     margin-bottom: 20px;
+    height: 3rem;
 }
 
 .howto-item__list {
@@ -885,6 +888,13 @@ footer {
     }
 }
 
+@media screen and (max-width: 1201px) {
+    #categoryModal .modal-dialog,
+    #formModal .modal-dialog {
+        height: unset !important;
+    }
+}
+
 @media (max-width: 991px) {
     #mixedSlider .MS-content .item {
         width: 50%;
@@ -895,6 +905,18 @@ footer {
     #mixedSlider .MS-content .item {
         width: 100%;
     }
+
+    .send-form label {
+        display: none;
+    }
+    .form-group {
+
+    }
+
+    .form-input {
+
+    }
+    
 }
 
 #mixedSlider .MS-content .item .imgTitle {
@@ -1080,6 +1102,7 @@ footer {
 
 .modal-header {
     justify-content: center;
+    border: none;
 }
 
 .modal-title {
@@ -1108,7 +1131,7 @@ footer {
     min-height: 100%;
     width: auto;
     min-width: 100%;
-    border-radius: 1.5rem;
+    /* border-radius: 1.5rem; */
 }
 
 #categoryModal .category-modal--btn {
@@ -1131,6 +1154,7 @@ footer {
     align-content: center;
     align-items: center;
     padding: 0.5rem;
+    border: none;
 }
 
 .modal-footer--wrapper {
@@ -1228,174 +1252,165 @@ footer {
 
 /* MATERIAL LIKE INPUTS */
 
-.send-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 10px;
-    /* margin-top: 10px; */
-}
+@media screen and (min-width: 769px) {
 
-.form-group {
-    position: relative;
-    margin-bottom: 45px;
-}
-
-.form-group-submit {
-    margin-bottom: 10px;
-}
-
-.select-group-true {
-    margin-bottom: 60px;
-}
-
-.form-submit {
-    width: 450px;
-    height: 60px;
-    border-radius: 2rem;
-    background-color: #CBA77D;
-    border: none;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
-}
-
-.form-input {
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 450px;
-    border: none;
-    border-bottom: 1px solid #c5c5c5;
-}
-
-/* .form-input.form-input-number {
-    width: 250px;
-} */
-
-.form-input:focus {
-    outline: none;
-}
-
-.form-select {
-    height: 50px;
-    width: 450px !important;
-    border-bottom: 1px solid #c5c5c5;
-}
-
-.form-select-default-option {
-    opacity: 0;
-}
-
-.form-select--option.dropdown-item .text,
-.filter-option-inner-inner {
-    display: flex !important;
-    justify-content: flex-start;
-}
-
-.btn-toggler {
-    background-color: #CBA77D;
-    /* border-bottom: 1px solid #CBA77D; */
-}
-
-.btn-toggler[title='-'] {
-    background-color: #fff;
-    /* border-bottom: 1px solid #c5c5c5; */
-    color: #fff;
-}
-
-.btn-toggler::after {
-    color: #636363;
-}
-
-.form-select .dropdown-item {
-    padding-right: 0 !important;
-}
-
-.select-img {
-    margin-right: 10px;
-}
-
-.form-price {
-    font-weight: bold;
-}
-
-
-/* LABEL ======================================= */
-
-.form-select.show~.form-label,
-.form-label.activated {
-    top: -20px;
-    font-size: 14px;
-    color: #CBA77D;
-}
-
-.dropdown-toggle~.form-label {
-    top: -20px !important;
-    font-size: 14px !important;
-    color: #CBA77D !important;
-}
-
-.form-label,
-.dropdown-toggle[title='-']~.form-label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 15px;
-    top: 10px;
-    width: 300px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.form-input[type=number]::-webkit-inner-spin-button,
-.form-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.form-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-
-/* active state */
-
-.form-input:focus~.form-label,
-.form-input:valid~.form-label {
-    top: -20px;
-    font-size: 14px;
-    color: #CBA77D;
-}
-
-.form-input-email:not(:empty):invalid~.form-label {
-    top: -20px;
-    font-size: 14px;
-    color: red;
-}
-
-.form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label {
-    top: -20px;
-    font-size: 14px;
-    color: red;
-}
-
-.form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label::before {
-    content: "Неправильні дані";
-    position: absolute;
-    bottom: -70px;
-    font-size: 14px;
-    color: red;
-}
-
-
-/* BOTTOM BARS ================================= */
-
+        .send-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            padding: 10px;
+            /* margin-top: 10px; */
+        }
+        
+        .form-group {
+            position: relative;
+            margin-bottom: 45px;
+        }
+        
+        .form-group-submit {
+            margin-bottom: 10px;
+        }
+        
+        .select-group-true {
+            margin-bottom: 60px;
+        }
+        
+        .form-submit {
+            width: 450px;
+            height: 60px;
+            border-radius: 2rem;
+            background-color: #CBA77D;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .form-input {
+            font-size: 18px;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 450px;
+            border: none;
+            border-bottom: 1px solid #c5c5c5;
+        }
+        
+        /* .form-input.form-input-number {
+            width: 250px;
+        } */
+        
+        .form-input:focus {
+            outline: none;
+        }
+        
+        .form-select {
+            height: 50px;
+            width: 450px !important;
+            border-bottom: 1px solid #c5c5c5;
+        }
+        
+        .form-select-default-option {
+            opacity: 0;
+        }
+        
+        .form-select--option.dropdown-item .text,
+        .filter-option-inner-inner {
+            display: flex !important;
+            justify-content: flex-start;
+        }
+        
+        .btn-toggler {
+            background-color: #CBA77D;
+            /* border-bottom: 1px solid #CBA77D; */
+        }
+        
+        .btn-toggler[title='-'] {
+            background-color: #fff;
+            /* border-bottom: 1px solid #c5c5c5; */
+            color: #fff;
+        }
+        
+        .btn-toggler::after {
+            color: #636363;
+        }
+        
+        .form-select .dropdown-item {
+            padding-right: 0 !important;
+        }
+        
+        .select-img {
+            margin-right: 10px;
+        }
+        
+        .form-price {
+            font-weight: bold;
+        }
+        
+        
+        /* LABEL ======================================= */
+        
+        .form-select.show~.form-label,
+        .form-label.activated {
+            top: -20px;
+            font-size: 14px;
+            color: #CBA77D;
+        }
+        
+        .dropdown-toggle~.form-label {
+            top: -20px !important;
+            font-size: 14px !important;
+            color: #CBA77D !important;
+        }
+        
+        .form-label,
+        .dropdown-toggle[title='-']~.form-label {
+            color: #999;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 15px;
+            top: 10px;
+            width: 300px;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+        }
+        
+        .form-input[type=number]::-webkit-inner-spin-button,
+        .form-input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .form-input[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+        
+        /* active state */
+        
+        .form-input:focus~.form-label,
+        .form-input:valid~.form-label {
+            top: -20px;
+            font-size: 14px;
+            color: #CBA77D;
+        }
+        
+        .form-input-email:not(:empty):invalid~.form-label {
+            top: -20px;
+            font-size: 14px;
+            color: red;
+        }
+        
+        .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label {
+            top: -20px;
+            font-size: 14px;
+            color: red;
+    }
+    
 .bar {
     position: relative;
     display: block;
@@ -1453,6 +1468,20 @@ footer {
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
 }
+
+}
+@media screen only and (max-width: 1520px) {
+    .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label::before {
+        content: "Неправильні дані";
+        position: absolute;
+        bottom: -70px;
+        font-size: 14px;
+        color: red;
+    }
+}
+
+
+/* BOTTOM BARS ================================= */
 
 
 /* ANIMATIONS ================ */
