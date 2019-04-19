@@ -29,7 +29,7 @@ START OF GENERAL RULES
     color: #929495;
 }
 
-@media screen and (max-width: 1560px) {
+@media screen and (min-width: 1200px) {
     #categories {
         height: calc(100vh - 65px) !important;
     }
@@ -62,7 +62,8 @@ NAVBAR
 **************/
 
 nav {
-    height: 65px;
+    min-height: 65px;
+    position: absolute;
 }
 
 .brand-wrapper {
@@ -236,11 +237,6 @@ section#home {
     padding: 50px;
 }
 
-.header-content {
-    /* margin: 50px; */
-    /* margin-left: 240px; */
-}
-
 .header-content .lead {
     margin: 60px 0;
 }
@@ -305,7 +301,7 @@ section#advantages {
 }
 
 #advantages .container {
-    margin-top: 40px;
+    padding-top: 65px;
 }
 
 .advantages-wrapper {
@@ -919,6 +915,25 @@ footer {
     
 }
 
+@media screen and (max-width: 568px) {
+    .category-filter-button {
+        width: 150px;
+    }
+
+    .MS-controls {
+        margin: 15px auto;
+    }
+
+    .contact-item__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item__icon {
+        margin-bottom: 10px;
+    }
+}
+
 #mixedSlider .MS-content .item .imgTitle {
     position: relative;
 }
@@ -975,8 +990,120 @@ footer {
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
     .header-text {
-        font-size: 3rem;
+        font-size: 2rem;
+        width: 250px;
     }
+
+    .category-filter-button {
+        width: 130px;
+        text-indent: 10px;
+    }
+
+    .category-filter-wrapper {
+        margin: 0 5px;
+    }
+
+    .howto-item {
+        margin-bottom: 20px;
+    }
+
+    .howto-item__header {
+        height: auto;
+    }
+    
+    .header-description {
+        width: 250px;
+        font-size: 1.2rem;
+    }
+
+    .header-content__wrapper {
+        padding: 5px
+    }
+
+    .header-content .lead {
+        margin: 10px 0 35px;
+    }
+
+    .header-content .container {
+        margin-left: 10px;
+    }
+
+    .carousel-item .goods-item {
+        width: 100%;
+    }
+    
+    .goods-item {
+        padding: 2px;
+    }
+
+    .carousel-control-next {
+        right: 5px;
+        top: 25px;
+        height: 175px;
+        width: 40px;
+    }
+
+    .carousel-control-prev {
+        left: 5px;
+        top: 25px;
+        height: 175px;
+        width: 40px;
+    }
+    
+    #mixedSlider {
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: 30px;
+    }
+
+    .category-wrapper .container-fluid {
+        padding: 0 !important;
+    }
+
+    #mixedSlider .MS-content .item .imgTitle img {
+        height: auto;
+        max-height: 300px;
+        width: 100%;
+    }
+
+    #mixedSlider .MS-content {
+        margin: 0;
+    }
+    .category-item__name {
+        font-size: 1.6rem;
+    }
+
+    .category-filter-wrapper .dropdown-menu {
+        width: 50px;
+    }
+
+    #womanFilterContainer, #manFilterContainer {
+        width: 160px;
+        align-items: flex-start;
+    }
+    #womanFilterContainer button,
+    #manFilterContainer button {
+        width: 100%;
+    }
+
+    #toTop {
+        height: 40px;
+        width: 40px;
+        background: #CBA77D;
+        border: none;
+        border-radius: 50%;
+        color: #fff;
+        position: fixed;
+        bottom: 40px;
+        right: 15px;
+        display: none;
+        outline: none;
+    }
+    
+    #toTop i {
+        font-size: 22px;
+    }
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -989,7 +1116,14 @@ footer {
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .header-description {
+        font-size: 1.1rem;
+        color: #fff;
+        width: auto;
+        margin-bottom: 2rem;
+    }
+}
 
 @media only screen and (max-width: 991px) {
     header {
@@ -1001,12 +1135,6 @@ footer {
         height: calc(100vh - 65px);
         /* overflow: hidden; */
         /* position: relative; */
-    }
-    .header-description {
-        font-size: 1.1rem;
-        color: #fff;
-        width: auto;
-        margin-bottom: 2rem;
     }
     .watermark-wrapper {
         display: none;
@@ -1021,6 +1149,21 @@ footer {
         animation: brand-appear-sm forwards;
         animation-delay: 0.5s;
         animation-duration: 1.5s
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #home {
+        background-image: linear-gradient( 270deg, rgba(22, 25, 34, 0.85) 0%,
+        rgba(22, 25, 34, 0.5185) 49.72%,
+        rgba(22, 25, 34, 0.595) 100%,
+        rgba(22, 25, 34, 0.595) 100%,
+        rgba(22, 25, 34, 0.85) 100%),
+        url('../assets/images/category-background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 }
 
@@ -1470,7 +1613,7 @@ footer {
 }
 
 }
-@media screen only and (max-width: 1520px) {
+@media only screen and (max-width: 1520px) {
     .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label::before {
         content: "Неправильні дані";
         position: absolute;
@@ -1532,3 +1675,7 @@ footer {
     height: 600px !important;
 
 }
+
+
+.ui-loading .ui-loader { display: block; }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }

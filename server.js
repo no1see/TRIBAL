@@ -59,7 +59,7 @@ app.post("/send-email", function(req, res) {
         <h3>Деталі замовника:</h3>
 
         <p><b>Ім\'я прізвище:</b><span>${req.body.name}</span></p>
-        <p><b>Місто відправлення:</b><span>${req.body.city}</span></p>
+        <p><b>Місто відправлення:</b><span>${req.body.city}</span>&nbsp;<span>${req.body.number}</span></p>
         <p><b>Email:</b><span>${req.body.from}</span></p>
         <p><b>Телефон:</b><span>${req.body.phone}</span></p>
 
