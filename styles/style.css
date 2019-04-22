@@ -897,7 +897,11 @@ footer {
     }
 }
 
-@media (max-width: 767px) {
+
+/* |TODO: ORDER FORM FOR 768 AND SMALLER 
+FIXME: FIX POSITIONING FOR CATEGORY MODAL FOR 768 AND SMALLER
+TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
+@media (max-width: 768px) {
     #mixedSlider .MS-content .item {
         width: 100%;
     }
