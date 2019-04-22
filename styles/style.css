@@ -906,17 +906,75 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         width: 100%;
     }
 
+    .send-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .send-form .row {
+        width: 350px;
+    }
+
     .send-form label {
         display: none;
     }
     .form-group {
-
+        display: flex;
+        width: 100%;
+        margin-bottom: 25px;
     }
 
     .form-input {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #a2a2a1;
+        outline: none;
+    }
 
+    .form-select {
+        /* height: 50px; */
+        width: 100% !important;
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+    .filter-option-inner-inner {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .filter-option-inner-inner img {
+        margin: 0 5px;
+    }
+
+    .btn-toggler {
+        background-color: #CBA77D;
+        /* border-bottom: 1px solid #CBA77D; */
     }
     
+    .btn-toggler[title='-'] {
+        background-color: #fff;
+        /* border-bottom: 1px solid #c5c5c5; */
+        color: #fff;
+    }
+    
+    .btn-toggler::after {
+        color: #636363;
+    }
+
+    .form-submit {
+        width: 260px;
+        height: 50px;
+        border-radius: 2rem;
+        background-color: #CBA77D;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+        margin: 0 auto;
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 568px) {
@@ -1396,7 +1454,11 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
     padding: 1rem 1.5rem;
 }
 
-
+.form-input[type=number]::-webkit-inner-spin-button,
+.form-input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 /* MATERIAL LIKE INPUTS */
 
 @media screen and (min-width: 769px) {
@@ -1525,11 +1587,7 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         -webkit-transition: 0.2s ease all;
     }
     
-    .form-input[type=number]::-webkit-inner-spin-button,
-    .form-input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+    
     
     .form-input[type=number] {
         -moz-appearance: textfield;
