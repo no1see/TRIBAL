@@ -1396,222 +1396,230 @@ footer {
 /* MATERIAL LIKE INPUTS */
 
 @media screen and (min-width: 769px) {
-
-        .send-form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            padding: 10px;
-            /* margin-top: 10px; */
-        }
-        
-        .form-group {
-            position: relative;
-            margin-bottom: 45px;
-        }
-        
-        .form-group-submit {
-            margin-bottom: 10px;
-        }
-        
-        .select-group-true {
-            margin-bottom: 60px;
-        }
-        
-        .form-submit {
-            width: 450px;
-            height: 60px;
-            border-radius: 2rem;
-            background-color: #CBA77D;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
-        }
-        
-        .form-input {
-            font-size: 18px;
-            padding: 10px 10px 10px 5px;
-            display: block;
-            width: 450px;
-            border: none;
-            border-bottom: 1px solid #c5c5c5;
-        }
-        
-        /* .form-input.form-input-number {
-            width: 250px;
-        } */
-        
-        .form-input:focus {
-            outline: none;
-        }
-        
-        .form-select {
-            height: 50px;
-            width: 450px !important;
-            border-bottom: 1px solid #c5c5c5;
-        }
-        
-        .form-select-default-option {
-            opacity: 0;
-        }
-        
-        .form-select--option.dropdown-item .text,
-        .filter-option-inner-inner {
-            display: flex !important;
-            justify-content: flex-start;
-        }
-        
-        .btn-toggler {
-            background-color: #CBA77D;
-            /* border-bottom: 1px solid #CBA77D; */
-        }
-        
-        .btn-toggler[title='-'] {
-            background-color: #fff;
-            /* border-bottom: 1px solid #c5c5c5; */
-            color: #fff;
-        }
-        
-        .btn-toggler::after {
-            color: #636363;
-        }
-        
-        .form-select .dropdown-item {
-            padding-right: 0 !important;
-        }
-        
-        .select-img {
-            margin-right: 10px;
-        }
-        
-        .form-price {
-            font-weight: bold;
-        }
-        
-        
-        /* LABEL ======================================= */
-        
-        .form-select.show~.form-label,
-        .form-label.activated {
-            top: -20px;
-            font-size: 14px;
-            color: #CBA77D;
-        }
-        
-        .dropdown-toggle~.form-label {
-            top: -20px !important;
-            font-size: 14px !important;
-            color: #CBA77D !important;
-        }
-        
-        .form-label,
-        .dropdown-toggle[title='-']~.form-label {
-            color: #999;
-            font-size: 18px;
-            font-weight: normal;
-            position: absolute;
-            pointer-events: none;
-            left: 15px;
-            top: 10px;
-            width: 300px;
-            transition: 0.2s ease all;
-            -moz-transition: 0.2s ease all;
-            -webkit-transition: 0.2s ease all;
-        }
-        
-        .form-input[type=number]::-webkit-inner-spin-button,
-        .form-input[type=number]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        
-        .form-input[type=number] {
-            -moz-appearance: textfield;
-        }
-        
-        
-        /* active state */
-        
-        .form-input:focus~.form-label,
-        .form-input:valid~.form-label {
-            top: -20px;
-            font-size: 14px;
-            color: #CBA77D;
-        }
-        
-        .form-input-email:not(:empty):invalid~.form-label {
-            top: -20px;
-            font-size: 14px;
-            color: red;
-        }
-        
-        .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label {
-            top: -20px;
-            font-size: 14px;
-            color: red;
+    .send-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 10px;
+        /* margin-top: 10px; */
     }
     
-.bar {
-    position: relative;
-    display: block;
-    width: 450px;
-}
+    .form-group {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    
+    .form-group-submit {
+        margin-bottom: 10px;
+    }
+    
+    .select-group-true {
+        margin-bottom: 60px;
+    }
+    
+    .form-submit {
+        width: 450px;
+        height: 60px;
+        border-radius: 2rem;
+        background-color: #CBA77D;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    }
+    
+    .form-input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 450px;
+        border: none;
+        border-bottom: 1px solid #c5c5c5;
+    }
+    
+    /* .form-input.form-input-number {
+        width: 250px;
+    } */
+    
+    .form-input:focus {
+        outline: none;
+    }
+    
+    .form-select {
+        height: 50px;
+        width: 450px !important;
+        border-bottom: 1px solid #c5c5c5;
+    }
+    
+    .form-select-default-option {
+        opacity: 0;
+    }
+    
+    .form-select--option.dropdown-item .text,
+    .filter-option-inner-inner {
+        display: flex !important;
+        justify-content: flex-start;
+    }
+    
+    .btn-toggler {
+        background-color: #CBA77D;
+        /* border-bottom: 1px solid #CBA77D; */
+    }
+    
+    .btn-toggler[title='-'] {
+        background-color: #fff;
+        /* border-bottom: 1px solid #c5c5c5; */
+        color: #fff;
+    }
+    
+    .btn-toggler::after {
+        color: #636363;
+    }
+    
+    .form-select .dropdown-item {
+        padding-right: 0 !important;
+    }
+    
+    .select-img {
+        margin-right: 10px;
+    }
+    
+    .form-price {
+        font-weight: bold;
+    }
+    
+    
+    /* LABEL ======================================= */
+    
+    .form-select.show~.form-label,
+    .form-label.activated {
+        top: -20px;
+        font-size: 14px;
+        color: #CBA77D;
+    }
+    
+    .dropdown-toggle~.form-label {
+        top: -20px !important;
+        font-size: 14px !important;
+        color: #CBA77D !important;
+    }
+    
+    .form-label,
+    .dropdown-toggle[title='-']~.form-label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 15px;
+        top: 10px;
+        width: 300px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    
+    .form-input[type=number]::-webkit-inner-spin-button,
+    .form-input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .form-input[type=number] {
+        -moz-appearance: textfield;
+    }
+    
+    
+    /* active state */
+    
+    .form-input:focus~.form-label,
+    .form-input:valid~.form-label {
+        top: -20px;
+        font-size: 14px;
+        color: #CBA77D;
+    }
+    
+    .form-input-email:not(:empty):invalid~.form-label {
+        top: -20px;
+        font-size: 14px;
+        color: red;
+    }
+    
+    .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label {
+        top: -20px;
+        font-size: 14px;
+        color: red;
+    }
 
-.bar:before,
-.bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    background: #CBA77D;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
+    .bar {
+        position: relative;
+        display: block;
+        width: 450px;
+    }
 
-.bar:before {
-    left: 50%;
-}
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #CBA77D;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
 
-.bar:after {
-    right: 50%;
-}
+    .bar:before {
+        left: 50%;
+    }
 
-
-/* active state */
-
-.form-input:focus~.bar:before,
-.form-input:focus~.bar:after {
-    width: 50%;
-}
+    .bar:after {
+        right: 50%;
+    }
 
 
-/* HIGHLIGHTER ================================== */
+    /* active state */
 
-.highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 25%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
-}
+    .form-input:focus~.bar:before,
+    .form-input:focus~.bar:after {
+        width: 50%;
+    }
 
 
-/* active state */
+    /* HIGHLIGHTER ================================== */
 
-.form-input:focus~.highlight,
-.form-input:active~.highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease;
-}
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    ::-webkit-input-placeholder{
+        visibility: hidden;
+    }
+    ::-moz-placeholder{
+        visibility: hidden;
+    }
+    :-ms-input-placeholder{
+        visibility: hidden;
+    }
+    :-moz-placeholder {
+        visibility: hidden;
+    }
+    /* active state */
 
+    .form-input:focus~.highlight,
+    .form-input:active~.highlight {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
 }
 @media only screen and (max-width: 1520px) {
     .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label::before {
@@ -1678,4 +1686,4 @@ footer {
 
 
 .ui-loading .ui-loader { display: block; }
-.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+.ui-loader, .ui-selectmenu-button-text { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
