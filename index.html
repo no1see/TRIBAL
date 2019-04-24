@@ -68,7 +68,9 @@
     <div class="modal fade" id="formModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-
+                <div class="loader-wrapper">
+                </div>
+                <span class="fa fa-spinner fa-spin fa-3x" id="loaderDiv"></span>
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <div class="modal-header--container ">
@@ -2150,11 +2152,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
     <script>
-        
-        // $('#mixedSlider').multislider({
-        //     duration: 750,
-        //     interval: 3000
-        // });
+        $('#mixedSlider').multislider({
+            duration: 750,
+            interval: 3000
+        });
         var options = '';
         $.getJSON("allGoods.json", function(json) {
             $('.selectpicker').empty();
@@ -2303,7 +2304,16 @@
                         body,
                         order
                     }),
+                    beforeSend: function() {
+                        $("#loaderDiv").show();
+                        $('.loader-wrapper').show();
+                    },
+                    complete: function() {
+                        $("#loaderDiv").hide();
+                        $('.loader-wrapper').hide();
+                    },
                     success: function(response) {
+                        window.location.href = "thanks.html";
                         console.log(response);
                     },
                     fail: function(error) {
@@ -2334,6 +2344,7 @@
             window.location.hash = 'home';
         });
 
+        // Scroll effect for navigation Links
         $("a#nav-scroller").on('click', function (event) {
                 // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
@@ -2354,6 +2365,8 @@
                 });
             } // End if
         });
+
+        
         // END OFF SCROLL EFFECTS
         $("#bs4-slide-carousel").swiperight(function(e) {
             e.preventDefault();

@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
     // IF WEB STORM SERVER
     // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');
 
-    // IF VS CODE SERVER
+    // Address from where to allow requests
     res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
 
     // Request methods you wish to allow
@@ -52,18 +52,19 @@ app.post("/send-email", function(req, res) {
     
         <p> <b> ТОВАР </b> </p>
         <img src="cid:${req.body.order}-1.jpeg" alt="Фото товару" style="width: 250px; height: auto;">
-        <p><b>Код товару </b><span>${req.body.order}</span></p>
-        <p><b>Назва товару </b><span>${goodObj[0].name}</span></p>
-        <p><b>Ціна товару </b><span>${goodObj[0].price} грн.</span></p>
+        <p><b>Код товару:</b>&nbsp;<span>${req.body.order}</span></p>
+        <p><b>Назва товару:</b>&nbsp;<span>${goodObj[0].name}</span></p>
+        <p><b>Ціна товару:</b>&nbsp;<span>${goodObj[0].price} грн.</span></p>
 
         <h3>Деталі замовника:</h3>
 
-        <p><b>Ім\'я прізвище:</b><span>${req.body.name}</span></p>
-        <p><b>Місто відправлення:</b><span>${req.body.city}</span>&nbsp;<span>${req.body.number}</span></p>
-        <p><b>Email:</b><span>${req.body.from}</span></p>
-        <p><b>Телефон:</b><span>${req.body.phone}</span></p>
+        <p><b>Ім\'я прізвище:</b>&nbsp;<span>${req.body.name}</span></p>
+        <p><b>Місто відправлення:</b>&nbsp;<span>${req.body.city}</span></p>
+        <p><b>Відділення Нової Пошти:</b>&nbsp;<span>${req.body.number}</span></p>
+        <p><b>Email:</b>&nbsp;<span>${req.body.from}</span></p>
+        <p><b>Телефон:</b>&nbsp;<span>${req.body.phone}</span></p>
 
-        <h3>Повідомлення</h3>
+        <h3>Повідомлення:</h3>
         <p>${req.body.body}</p>
     `;
     let transporter = nodeMailer.createTransport({
