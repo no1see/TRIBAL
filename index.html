@@ -2285,6 +2285,7 @@
                 $('.category-modal-body').html('<div class="category-modal--wrapper"><div class="directorySlider"></div><div class="main-image-container"><img id="expandedImg" style="width:100%"> <div id="imgtext"></div> </div> </div>');
                 $.ajax({
                     url: `${folder}?raw=true`,
+                    crossDomain: true,
                     success: function(data) {
                         $(data).find("a").attr("href", function(i, val) {
                             if (val.match(/\.(jpe?g|png|gif)$/)) {
