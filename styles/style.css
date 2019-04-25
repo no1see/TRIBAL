@@ -1617,6 +1617,14 @@ footer {
 }
 
 @media screen and (max-width: 479px) {
+    .send-form .dropdown-menu.show {
+        top: 60px !important;
+        width: 350px !important;
+        min-width: 330px !important;
+    }
+    .send-form .row {
+        width: 350px;
+    }
     #formModal,
     #categoryModal {
         padding-right: 0 !important;
