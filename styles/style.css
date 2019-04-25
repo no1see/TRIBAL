@@ -1634,8 +1634,15 @@ footer {
     #categoryModal .modal-dialog, #formModal .modal-dialog {
         margin-top: 0;
     }
+    .modal-footer--content__text {
+        text-align: center;
+    }
+    #categoryModal .modal-dialog,
+    #formModal .modal-dialog {
+        height: 100% !important;
+    }
     #formModal .modal-header {
-        padding-bottom: 0;
+        /* padding-bottom: 0; */
     }
     .header-content__wrapper {
         padding: 20px;
