@@ -1622,6 +1622,9 @@ footer {
         width: 320px !important;
         min-width: 300px !important;
     }
+    .modal-header .close {
+        padding-top: 0.7rem;
+    }
     .send-form .row {
         width: 350px;
     }
