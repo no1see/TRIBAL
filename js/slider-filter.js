@@ -37,7 +37,7 @@ filterWoman("all");
   var current;
   for (var i = 0; i < womanBtns.length; i++) {
     womanBtns[i].addEventListener("click", function(e){
-      console.log(e.target.classList);
+      // console.log(e.target.classList);
       if (e.target.classList.contains('active')) {
         return;
       } else {
@@ -94,7 +94,7 @@ filterWoman("all");
   var current;
   for (var i = 0; i < manBtns.length; i++) {
     manBtns[i].addEventListener("click", function(e){
-      console.log(e.target.classList);
+      // console.log(e.target.classList);
       if (e.target.classList.contains('active')) {
         return;
       } else {

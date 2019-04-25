@@ -5,7 +5,6 @@ h3,
 p,
 input,
 textarea {
-    /* font-family: 'Lato', sans-serif; */
     color: #636363;
 }
 
@@ -589,7 +588,8 @@ CATEGORY
     margin: 0;
 }
 
-.category-item__name {
+.category-item__name,
+.goods-item__name {
     color: #fff;
     margin-top: 5px !important;
     font-size: 2rem;
@@ -1021,23 +1021,27 @@ footer {
 }
 
 .modal-footer--wrapper {
-    width: 350px;
+    width: 600px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
 
+#formModal .modal-body {
+    padding: 0 1rem;
+}
+
 .modal-footer--content {
-    padding: 15px;
+    padding: 15px 5px;
 }
 
 .modal-footer--content__text {
     line-height: 1;
     margin: 0;
     padding: 0;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 #categoryModal .rows {
@@ -1129,12 +1133,15 @@ footer {
 .inner.show {
     width: 100%;
 }
-
+#expandedImg {
+    max-height: 800px;
+}
 .send-form .dropdown-menu.show {
     transform: none !important;
     top: 75px !important;
     height: 600px !important;
     width: 450px;
+    overflow: auto;
 }
 
 @media (max-width: 1366px) {
@@ -1169,6 +1176,7 @@ footer {
 
     .howto-item__header {
         height: 1.5rem;
+        margin: 10px 0;
     }
 
     .goods-desc {
@@ -1320,9 +1328,22 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
     .contact-item__icon {
         margin-bottom: 10px;
     }
+
+    #loaderDiv {
+        position: absolute;
+        top: 50% !important;
+        left: 45% !important;
+        transform: translate(-50%,-50%);
+    }
 }
 
 @media screen and (max-width: 479px) {
+    #categoryModal .modal-dialog, #formModal .modal-dialog {
+        margin-top: 0;
+    }
+    #formModal .modal-header {
+        padding-bottom: 0;
+    }
     .header-content__wrapper {
         padding: 20px;
     }
@@ -1354,6 +1375,7 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
 
     .main-image-container {
         width: 100%;
+        padding: 0;
     }
 
     .directorySlider {
@@ -1362,6 +1384,14 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
 
     #womanFilterContainer, #manFilterContainer {
         width: 100%;
+    }
+
+    .category-filter-wrapper {
+        margin: 0 5px;
+    }
+
+    #mixedSlider .MS-content .item p {
+        text-indent: 0;
     }
 
     .category-filter-wrapper .dropdown-menu {
@@ -1375,6 +1405,58 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
     .contact-item__content  {
         text-align: center;
     }
+
+    .form-group-submit {
+        margin-bottom: 0;
+    }
+    .bootstrap-select .dropdown-menu li a span.text {
+        display: flex !important;
+    }
+
+    .modal-title  {
+        font-size: 1.2rem;
+    }
+    .goods-desc {
+        padding: 0;
+    }
+    
+    .carousel-item .goods-item__image {
+        width: 100%;
+    }
+    p.goods-item__free {
+        font-size: 1rem;
+    }
+    .goods-item__name,
+    .goods-item__price {
+        text-indent: 0;
+        font-size: 1.4rem;
+    }
+    .category-item__name,
+    .goods-item__name {
+        font-size: 1.4rem;
+    }
+
+    #testimonials .container-fluid,
+    .testimonials-wrapper {
+        margin-top: 25px;
+    }
+
+    
+}
+
+@media screen and (max-width: 414px) {
+    p.goods-item__free {
+        font-size: 1.1rem;
+    }
+    .goods-item__name,
+    .goods-item__price {
+        text-indent: 0;
+        font-size: 1.6rem;
+    }
+    .category-item__name,
+    .goods-item__name {
+        font-size: 1.6rem;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -1382,6 +1464,21 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         margin-top: 40px;
     }
 
+    .goods-desc {
+        padding: 0;
+    }
+    
+    .carousel-item .goods-item__image {
+        width: 100%;
+    }
+    p.goods-item__free {
+        font-size: 1rem;
+    }
+    .goods-item__name,
+    .goods-item__price {
+        text-indent: 0;
+        font-size: 1.4rem;
+    }
     .header-text {
         font-size: 2rem;
         width: 250px;
@@ -1520,8 +1617,21 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         height: 50px;
     }
 
+    .category-modal--btn__wrapper {
+        justify-content: flex-start !important;
+    }
+
     .send-form .row {
         width: 260px;
+    }
+
+    #formModal,
+    #categoryModal {
+        padding-right: 0 !important;
+    }
+
+    #categoryModal .modal-dialog, #formModal .modal-dialog {
+        margin-top: 0;
     }
 
     #formModal .modal-body {
@@ -1530,6 +1640,10 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
 
     #formModal .modal-title {
         font-size: 1.1rem;
+    }
+
+    #formModal .modal-header {
+        padding-bottom: 0;
     }
     
     #formModal .modal-header .close {
@@ -1560,6 +1674,14 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
 
     .send-form .dropdown-menu.inner.show li span.text {
         display: flex;
+    }
+
+    .modal-footer--wrapper span {
+        font-size: 0.9rem;
+    }
+
+    .modal-footer--content__text {
+        font-size: 0.9rem;
     }
 }
 
@@ -1606,6 +1728,10 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         animation: brand-appear-sm forwards;
         animation-delay: 0.5s;
         animation-duration: 1.5s
+    }
+
+    .category-modal--btn__wrapper {
+        justify-content: center !important;
     }
 }
 

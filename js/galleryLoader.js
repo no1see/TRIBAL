@@ -8,7 +8,7 @@ $(document).ready(function(){
       $(data).find("a").attr("href", function (i, val) {
         if( val.match(/\.(jpe?g|png|gif)$/) ) {
           arr.push(i);
-          console.log(arr.length);
+          // console.log(arr.length);
           $(".directorySlider").append( "<img src='" + val +"' class='image-loader'>" );
         } 
       });
