@@ -2251,7 +2251,7 @@
                 //DEFAULT
                 // folder = `/assets/images/sell/${$imgElement.prop('id')}`;
                 // FOR GIT PAGES
-                folder = `https://raw.githubusercontent.com/no1see/TRIBAL/master/assets/images/sell/${$imgElement.prop('id')}`;
+                folder = `https://github.com/no1see/TRIBAL/blob/master/assets/images/sell/${$imgElement.prop('id')}`;
                 button = `<div class="category-modal--btn__wrapper row d-flex justify-content-center"><button class="category-modal--btn" data-val="${$imgElement.prop('id')}" data-toggle="modal" data-target="#formModal">Замовити</button></div>`;
                 $imgSrc = $imgElement.attr('src');
                 // console.log($imgSrc);
@@ -2284,7 +2284,7 @@
                 $('.category-modal-body').find('.filter-item--description').append(button);
                 $('.category-modal-body').html('<div class="category-modal--wrapper"><div class="directorySlider"></div><div class="main-image-container"><img id="expandedImg" style="width:100%"> <div id="imgtext"></div> </div> </div>');
                 $.ajax({
-                    url: folder,
+                    url: `${folder}?raw=true`,
                     success: function(data) {
                         $(data).find("a").attr("href", function(i, val) {
                             if (val.match(/\.(jpe?g|png|gif)$/)) {
