@@ -1,0 +1,26 @@
+{
+  "name": "leather-landing",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/no1see/TRIBAL/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/no1see/TRIBAL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/no1see/TRIBAL/issues"
+  },
+  "homepage": "https://github.com/no1see/TRIBAL#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "nodemailer": "^6.1.1",
+    "path": "^0.12.7"
+  }
+}
