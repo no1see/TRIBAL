@@ -1628,6 +1628,13 @@ footer {
     .send-form .row {
         width: 350px;
     }
+    #categoryModal h1,
+    #categoryModal .item-description--price {
+        font-size: 1.5rem;
+    }
+    #categoryModal p {
+        margin: 0;
+    }
     .form-group {
         margin-bottom: 22px;
     }
@@ -1636,7 +1643,10 @@ footer {
         padding-right: 0 !important;
         padding-left: 0 !important;
     }
-
+    #categoryModal .category-modal--btn {
+        width: 200px;
+        height: 30px;
+    }
     #categoryModal .modal-dialog, #formModal .modal-dialog {
         margin-top: 0;
     }
