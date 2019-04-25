@@ -7,7 +7,9 @@ input,
 textarea {
     color: #636363;
 }
-
+.bootstrap-select .dropdown-menu li a span.text {
+    display: flex !important;
+}
 h2 {
     font-weight: 100;
 }
@@ -1042,7 +1044,7 @@ footer {
 }
 
 .modal-footer--content {
-    padding: 15px 5px;
+    padding: 5px;
 }
 
 .modal-footer--content__text {
@@ -1152,7 +1154,7 @@ footer {
     overflow: auto;
 }
 
-@media (max-width: 1366px) {
+@media screen and  (max-width: 1366px) and (min-width: 769px) {
     #mixedSlider .MS-content .item {
         width: 33.333333%;
     }
@@ -1492,7 +1494,11 @@ footer {
     #mixedSlider .MS-content .item {
         width: 100%;
     }
-
+    #formModal,
+    #categoryModal {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
     .send-form {
         display: flex;
         flex-direction: column;
@@ -1501,7 +1507,7 @@ footer {
     }
 
     .send-form .row {
-        width: 350px;
+        width: 450px;
     }
 
     .send-form label {
@@ -1510,7 +1516,7 @@ footer {
     .form-group {
         display: flex;
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
 
     .form-input {
@@ -1574,8 +1580,8 @@ footer {
 
     .send-form .dropdown-menu.show {
         top: 40px !important;
-        width: 320px !important;
-        min-width: 300px !important;
+        width: 450px !important;
+        min-width: 400px !important;
     }
 
     .carousel-item .goods-item__image {
@@ -1611,6 +1617,12 @@ footer {
 }
 
 @media screen and (max-width: 479px) {
+    #formModal,
+    #categoryModal {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
     #categoryModal .modal-dialog, #formModal .modal-dialog {
         margin-top: 0;
     }
@@ -1718,6 +1730,12 @@ footer {
 }
 
 @media screen and (max-width: 414px) {
+    #formModal,
+    #categoryModal {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
     p.goods-item__free {
         font-size: 1.1rem;
     }
@@ -1901,6 +1919,7 @@ footer {
     #formModal,
     #categoryModal {
         padding-right: 0 !important;
+        padding-left: 0 !important;
     }
 
     #categoryModal .modal-dialog, #formModal .modal-dialog {
@@ -1968,7 +1987,7 @@ footer {
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 769px) and (max-width: 991px) {
     .header-description {
         font-size: 1.1rem;
         color: #fff;
@@ -2020,6 +2039,15 @@ footer {
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+    }
+    .goods-desc p {
+        text-indent: 0;
+    }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1024px) {
+    .goods-container {
+        margin: 0;
     }
 }
 
