@@ -11,8 +11,16 @@ textarea {
 h2 {
     font-weight: 100;
 }
+body.modal-open {
+    overflow: hidden;
+}
+img {
+    border-style: none;
+}
 
-
+.ui-page.ui-page-theme-a.ui-page-active {
+    outline: none;
+}
 /* 
 START OF GENERAL RULES
 */
@@ -1148,6 +1156,275 @@ footer {
     #mixedSlider .MS-content .item {
         width: 33.333333%;
     }
+
+    .jumbotron {
+        padding-top: 2rem;
+    }
+    .header-text {
+        font-size: 3.5rem;
+    }
+    .category-item__name,
+    .goods-item__name {
+        font-size: 1.4rem;
+    }
+    #categories .section-header {
+        margin-top: 15px;
+    }
+    #expandedImg {
+        max-height: 500px;
+    }
+    #mixedSlider {
+        margin-top: 20px;
+    }
+
+    #mixedSlider .MS-content .item .imgTitle img {
+        height: 240px;
+        max-height: 250px;
+    }
+    .category-wrapper {
+        padding: 0;
+    }
+
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+    #formModal .modal-dialog {
+        height: unset;
+        margin-top: 0;
+    }
+    
+    .send-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 10px;
+        padding-top: 0;
+    }
+    .category-modal--btn__wrapper {
+        justify-content: flex-start !important;
+    }
+    .form-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+    .modal-title  {
+        font-size: 1.3rem;
+    }
+    .form-group-submit {
+        margin-bottom: 0;
+    }
+    .modal-footer--content {
+        padding: 0;
+    }
+    .select-group-true {
+        margin-bottom: 40px;
+    }
+    #categoryModal .category-modal--btn {
+        margin-top: 15px;
+        height: 40px;
+    }
+    .form-submit {
+        width: 250px;
+        height: 40px;
+        border-radius: 2rem;
+        background-color: #CBA77D;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    }
+    
+    .form-input {
+        font-size: 1rem;
+        padding: 5px 10px 8px;
+        display: block;
+        width: 450px;
+        border: none;
+        border-bottom: 1px solid #c5c5c5;
+    }
+    .form-input:focus {
+        outline: none;
+    }
+
+    #formModal textarea {
+        height: 2.5rem;
+    }
+    
+    .form-select {
+        height: 50px;
+        width: 450px !important;
+        border-bottom: 1px solid #c5c5c5;
+    }
+    
+    .form-select-default-option {
+        opacity: 0;
+    }
+    
+    .form-select--option.dropdown-item .text,
+    .filter-option-inner-inner {
+        display: flex !important;
+        justify-content: flex-start;
+    }
+
+    .filter-option-inner-inner p {
+        margin-bottom: 0;
+    }
+
+    .btn-toggler {
+        background-color: #CBA77D;
+        height: 60px;
+    }
+    
+    .btn-toggler[title='-'] {
+        background-color: #fff;
+        /* border-bottom: 1px solid #c5c5c5; */
+        color: #fff;
+    }
+    
+    .btn-toggler::after {
+        color: #636363;
+    }
+    
+    .form-select .dropdown-item {
+        padding-right: 0 !important;
+    }
+    
+    .select-img {
+        margin-right: 10px;
+    }
+    
+    .form-price {
+        font-weight: bold;
+    }
+    
+    
+    /* LABEL ======================================= */
+    
+    .form-select.show~.form-label,
+    .form-label.activated {
+        top: -20px;
+        font-size: 14px;
+        color: #CBA77D;
+    }
+    
+    .dropdown-toggle~.form-label {
+        top: -20px !important;
+        font-size: 14px !important;
+        color: #CBA77D !important;
+    }
+    
+    .form-label,
+    .dropdown-toggle[title='-']~.form-label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 15px;
+        top: 10px;
+        width: 300px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    
+    
+    
+    .form-input[type=number] {
+        -moz-appearance: textfield;
+    }
+    
+    
+    /* active state */
+    
+    .form-input:focus~.form-label,
+    .form-input:valid~.form-label {
+        top: -20px;
+        font-size: 14px;
+        color: #CBA77D;
+    }
+    
+    .form-input-email:not(:empty):invalid~.form-label {
+        top: -20px;
+        font-size: 14px;
+        color: red;
+    }
+    
+    .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label {
+        top: -20px;
+        font-size: 14px;
+        color: red;
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        width: 450px;
+    }
+
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #CBA77D;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+
+
+    /* active state */
+
+    .form-input:focus~.bar:before,
+    .form-input:focus~.bar:after {
+        width: 50%;
+    }
+    /* HIGHLIGHTER ================================== */
+
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    ::-webkit-input-placeholder{
+        visibility: hidden;
+    }
+    ::-moz-placeholder{
+        visibility: hidden;
+    }
+    :-ms-input-placeholder{
+        visibility: hidden;
+    }
+    :-moz-placeholder {
+        visibility: hidden;
+    }
+    /* active state */
+
+    .form-input:focus~.highlight,
+    .form-input:active~.highlight {
+        -webkit-animation: inputHighlighter 0.3s ease;
+        -moz-animation: inputHighlighter 0.3s ease;
+        animation: inputHighlighter 0.3s ease;
+    }
+
 }
 
 @media screen and (max-width: 1201px) {
@@ -1211,10 +1488,6 @@ footer {
     }
 }
 
-
-/* |TODO: ORDER FORM FOR 768 AND SMALLER 
-FIXME: FIX POSITIONING FOR CATEGORY MODAL FOR 768 AND SMALLER
-TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
 @media (max-width: 768px) {
     #mixedSlider .MS-content .item {
         width: 100%;
@@ -1753,7 +2026,7 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
 
 /* MATERIAL LIKE INPUTS */
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1367px) {
     .send-form {
         display: flex;
         flex-direction: column;
@@ -1761,7 +2034,6 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         align-items: center;
         align-content: center;
         padding: 10px;
-        /* margin-top: 10px; */
     }
     
     .form-group {
@@ -1796,11 +2068,7 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         border: none;
         border-bottom: 1px solid #c5c5c5;
     }
-    
-    /* .form-input.form-input-number {
-        width: 250px;
-    } */
-    
+
     .form-input:focus {
         outline: none;
     }
@@ -1823,12 +2091,10 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
     
     .btn-toggler {
         background-color: #CBA77D;
-        /* border-bottom: 1px solid #CBA77D; */
     }
     
     .btn-toggler[title='-'] {
         background-color: #fff;
-        /* border-bottom: 1px solid #c5c5c5; */
         color: #fff;
     }
     
@@ -1847,9 +2113,6 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
     .form-price {
         font-weight: bold;
     }
-    
-    
-    /* LABEL ======================================= */
     
     .form-select.show~.form-label,
     .form-label.activated {
@@ -1878,16 +2141,11 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
     }
-    
-    
-    
+
     .form-input[type=number] {
         -moz-appearance: textfield;
     }
-    
-    
-    /* active state */
-    
+
     .form-input:focus~.form-label,
     .form-input:valid~.form-label {
         top: -20px;
@@ -1934,14 +2192,10 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
         right: 50%;
     }
 
-
-    /* active state */
-
     .form-input:focus~.bar:before,
     .form-input:focus~.bar:after {
         width: 50%;
     }
-    /* HIGHLIGHTER ================================== */
 
     .highlight {
         position: absolute;
@@ -1964,7 +2218,6 @@ TODO: ALL!!!! IMAGES ON 1200 AND SMALLER */
     :-moz-placeholder {
         visibility: hidden;
     }
-    /* active state */
 
     .form-input:focus~.highlight,
     .form-input:active~.highlight {

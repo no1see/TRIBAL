@@ -2294,7 +2294,7 @@
             
             $('#categoryModal').on('shown.bs.modal', function(e) {
                 // console.log('loaded');
-                $(".directorySlider .rows img").first().trigger('click');
+                $(".category-modal--wrapper .directorySlider .rows img").first().trigger('click');
                 // console.log('clicked');
                 
             });
@@ -2306,6 +2306,7 @@
             });
         });
         $('#formModal').on('show.bs.modal', function(e) {
+            $("body").addClass("modal-open");
             $('#categoryModal').modal('hide');
             var myVal = $(e.relatedTarget).data('val');
             if (myVal) {
@@ -2315,6 +2316,10 @@
                 $('.selectpicker').selectpicker('refresh');
             }
         });
+
+        $('#formModal').on('hide.bs.modal', function() {
+            $("body").removeClass("modal-open");
+        })
 
         $(function() {
             $('.send-form').on('submit', function(event) {

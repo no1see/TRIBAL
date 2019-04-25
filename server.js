@@ -4,7 +4,7 @@ var express = require("express"),
     bodyParser = require("body-parser");
 
 var app = express();
-var jsonObj = require("../leather-landing/allGoods.json");
+var jsonObj = require("./allGoods.json");
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
