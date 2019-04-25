@@ -2292,6 +2292,9 @@ footer {
         font-size: 14px;
         color: red;
     }
+    .goods-container {
+        margin: 0;
+    }
 }
 
 
