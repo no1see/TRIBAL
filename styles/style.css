@@ -1814,7 +1814,7 @@ footer {
     
     .header-description {
         width: 250px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .header-content__wrapper {
@@ -1923,8 +1923,8 @@ footer {
     }
 
     #categoryModal .category-modal--btn {
-        width: 250px;
-        height: 50px;
+        width: 200px;
+        height: 30px;
     }
 
     .category-modal--btn__wrapper {
@@ -1964,7 +1964,14 @@ footer {
     #formModal .form-group {
         margin-bottom: 1rem;
     }
+    #categoryModal p {
+        margin: 0;
+    }
 
+    #categoryModal h1,
+    #categoryModal .item-description--price {
+        font-size: 1.5rem;
+    }
     #formModal .form-group-submit {
         margin-bottom: 0;
     }
@@ -1991,8 +1998,12 @@ footer {
         font-size: 0.9rem;
     }
 
+    textarea {
+        height: 2rem;
+    }
+
     .modal-footer--content__text {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 }
 
