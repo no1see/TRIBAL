@@ -1530,6 +1530,19 @@ footer {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .goods-desc {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .category-filter-button {
+        width: 125px;
+        text-indent: 1px;
+    }
+}
+
 @media screen and (max-width: 568px) {
     .category-filter-button {
         width: 150px;
