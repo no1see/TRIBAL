@@ -1558,6 +1558,13 @@ footer {
         width: 320px !important;
         min-width: 300px !important;
     }
+    #toTop {
+        right: 20px !important;
+    }
+    .jumbotron {
+        padding: 0 !important;
+    }
+
     .modal-header .close {
         padding-top: 0.7rem;
     }
@@ -1599,7 +1606,7 @@ footer {
     }
     .header-description {
         width: 300px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .header-content .lead {
         margin: 20px 0;
