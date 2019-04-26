@@ -2223,6 +2223,15 @@ footer {
     .howto-item {
         margin: 20px 0;
     }
+    .carousel-control-prev {
+        top: 65px;
+        left: 5px;
+    }
+    .carousel-control-prev {
+        top: 65px;
+        right: 5px;
+    }
+
 }
 
 .ui-loading .ui-loader {
