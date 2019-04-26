@@ -1561,6 +1561,9 @@ footer {
     #toTop {
         right: 20px !important;
     }
+    .advantages-wrapper {
+        padding: 0;
+    }
     .jumbotron {
         padding: 0 !important;
     }
