@@ -2217,6 +2217,8 @@ footer {
         top: 100%;
         left: 0;
     }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .advantages-item,
     .howto-item {
         margin: 20px 0;
