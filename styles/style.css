@@ -2217,6 +2217,10 @@ footer {
         top: 100%;
         left: 0;
     }
+    .advantages-item,
+    .howto-item {
+        margin: 20px 0;
+    }
 }
 
 .ui-loading .ui-loader {
