@@ -1158,17 +1158,6 @@ footer {
     overflow: auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 1520px) {
     .form-input-email:not([value=""]):not(:focus):not(:valid)~.form-label::before {
         content: "Неправильні дані";
@@ -1187,7 +1176,6 @@ footer {
         height: auto;
     }
 }
-
 @media only screen and (min-width: 769px) and (max-width: 991px) {
     .header-description {
         font-size: 1.1rem;
@@ -1196,18 +1184,6 @@ footer {
         margin-bottom: 2rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
-/* MATERIAL LIKE INPUTS */
-
 @media screen and (min-width: 1367px) {
     .send-form {
         display: flex;
@@ -1397,7 +1373,6 @@ footer {
         height: unset !important;
     }
 }
-
 @media screen and (max-width: 991px) {
     #mixedSlider .MS-content .item {
         width: 50%;
@@ -2195,9 +2170,6 @@ footer {
         font-size: 0.7rem;
     }
 }
-/* BOTTOM BARS ================================= */
-
-
 /* ANIMATIONS ================ */
 
 @-webkit-keyframes inputHighlighter {
